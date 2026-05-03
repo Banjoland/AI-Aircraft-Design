@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xflr5 SYSTEM "xflr5.dtd">
+<xflr5 version="6.61">
+  <Foil>
+    <FoilName>NACA2412</FoilName>
+    <FileName>C:/Users/asgin/OneDrive/Documents/PROJECTS/AI AIRPLANE DESIGN/AIRCRAFT DESIGN 2/DESIGN/AGENTS/airfoil_tool/dat/NACA2412.dat</FileName>
+  </Foil>
+  <Polar>
+    <FoilName>NACA2412</FoilName>
+    <PolarName>T1_Re0.500_M0.15_N9.0</PolarName>
+    <PolarType>1</PolarType>
+    <Reynolds>500000</Reynolds>
+    <Mach>0.15</Mach>
+    <NCrit>9.0</NCrit>
+    <ASpec>0</ASpec>
+  </Polar>
+  <Sequence>
+    <FoilName>NACA2412</FoilName>
+    <PolarName>T1_Re0.500_M0.15_N9.0</PolarName>
+    <AlphaStart>-4.0</AlphaStart>
+    <AlphaEnd>20.0</AlphaEnd>
+    <AlphaDelta>0.5</AlphaDelta>
+    <Sequence>true</Sequence>
+    <InitBL>true</InitBL>
+    <StoreOpp>false</StoreOpp>
+    <Export>true</Export>
+    <ExportFile>C:/Users/asgin/OneDrive/Documents/PROJECTS/AI AIRPLANE DESIGN/AIRCRAFT DESIGN 2/DESIGN/AGENTS/airfoil_tool/xflr5_output/NACA2412_polar.txt</ExportFile>
+  </Sequence>
+</xflr5>

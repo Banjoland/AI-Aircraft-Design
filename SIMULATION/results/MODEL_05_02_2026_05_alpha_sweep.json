@@ -1,0 +1,109 @@
+{
+  "model": "MODEL_05_02_2026_05.vsp3",
+  "analysis": "VSPAEROSweep_VLM",
+  "mach": 0.15,
+  "alpha_range_deg": [
+    -4.0,
+    16.0
+  ],
+  "reference": {
+    "mtow_kg": 218.0,
+    "wing_area_m2": 4.75,
+    "wing_span_m": 9.8,
+    "wing_mac_m": 0.494,
+    "engine_power_w": 13422.6
+  },
+  "polar": [
+    {
+      "alpha_deg": -4.0,
+      "CL": -0.002682,
+      "CD": 0.01968,
+      "CM": -0.084409,
+      "LD": -0.14
+    },
+    {
+      "alpha_deg": -2.0,
+      "CL": 0.080489,
+      "CD": 0.036285,
+      "CM": -0.193867,
+      "LD": 2.22
+    },
+    {
+      "alpha_deg": 0.0,
+      "CL": 0.327285,
+      "CD": 0.025964,
+      "CM": -0.696925,
+      "LD": 12.61
+    },
+    {
+      "alpha_deg": 2.0,
+      "CL": 0.53789,
+      "CD": 0.045149,
+      "CM": -1.095966,
+      "LD": 11.91
+    },
+    {
+      "alpha_deg": 4.0,
+      "CL": 0.738951,
+      "CD": 0.058756,
+      "CM": -1.462865,
+      "LD": 12.58
+    },
+    {
+      "alpha_deg": 6.0,
+      "CL": 0.955366,
+      "CD": 0.06911,
+      "CM": -1.867806,
+      "LD": 13.82
+    },
+    {
+      "alpha_deg": 8.0,
+      "CL": 1.180099,
+      "CD": 0.084493,
+      "CM": -2.292154,
+      "LD": 13.97
+    },
+    {
+      "alpha_deg": 10.0,
+      "CL": 1.395573,
+      "CD": 0.101205,
+      "CM": -2.674434,
+      "LD": 13.79
+    },
+    {
+      "alpha_deg": 12.0,
+      "CL": 1.5926,
+      "CD": 0.121181,
+      "CM": -3.075371,
+      "LD": 13.14
+    },
+    {
+      "alpha_deg": 14.0,
+      "CL": 1.720925,
+      "CD": 0.167657,
+      "CM": -3.434235,
+      "LD": 10.26
+    },
+    {
+      "alpha_deg": 16.0,
+      "CL": 2.036361,
+      "CD": 0.18487,
+      "CM": -3.792779,
+      "LD": 11.02
+    }
+  ],
+  "CL_alpha_per_deg": 0.10322,
+  "CL_0": 0.34091,
+  "Cm_alpha_per_deg": -0.19375,
+  "Cm_0": -0.71667,
+  "CL_max_vlm": 2.0364,
+  "vstall_est_ms": 19.0,
+  "vstall_limit_ms": 21.0,
+  "vstall_ok": true,
+  "vcruise_75pct_ms": 50.16,
+  "CL_cruise": 0.2922,
+  "CD_cruise": 0.027432,
+  "LD_cruise": 10.65,
+  "longitudinal_stable": true,
+  "Cm_alpha_sign": "negative (stable)"
+}

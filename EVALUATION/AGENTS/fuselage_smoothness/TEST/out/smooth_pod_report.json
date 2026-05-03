@@ -1,0 +1,364 @@
+{
+  "model": "TEST_SMOOTH_POD.vsp3",
+  "source_json": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\EVALUATION\\AGENTS\\fuselage_smoothness\\TEST\\fixtures\\smooth_pod.json",
+  "configuration": "pod_and_boom",
+  "summary": {
+    "total_profile_length_m": 4.2,
+    "max_equivalent_diameter_m": 0.794,
+    "fineness_ratio": 5.29,
+    "max_radius_profile_curvature_1_per_m": 0.7886,
+    "max_profile_slope_angle_deg": 35.82,
+    "max_centerline_curvature_1_per_m": 0.0,
+    "max_centerline_slope_angle_deg": 0.0,
+    "max_surface_curve_curvature_1_per_m": 0.8448,
+    "max_surface_curve_slope_angle_deg": 39.29,
+    "smoothness_score_0_100": 42.6,
+    "pressure_recovery_risk": "high"
+  },
+  "findings": [
+    "rapid nose/canopy expansion angle 35.8 deg",
+    "steep aft pressure-recovery taper 17.0 deg",
+    "localized radius-profile curvature 0.79 1/m"
+  ],
+  "recommendations": [
+    "Add intermediate fuselage sections or increase pod/boom transition length.",
+    "Reduce aft taper angle toward 10-12 deg for pressure recovery."
+  ],
+  "assumptions": [],
+  "stations": [
+    {
+      "label": "nose point",
+      "x_m": 0.0,
+      "z_center_m": 0.0,
+      "width_m": 0.0,
+      "height_m": 0.0,
+      "top_z_m": 0.0,
+      "bottom_z_m": 0.0,
+      "eq_radius_m": 0.0
+    },
+    {
+      "label": "forward cabin",
+      "x_m": 0.55,
+      "z_center_m": 0.0,
+      "width_m": 0.9,
+      "height_m": 0.7,
+      "top_z_m": 0.35,
+      "bottom_z_m": -0.35,
+      "eq_radius_m": 0.3969
+    },
+    {
+      "label": "aft cabin",
+      "x_m": 1.43,
+      "z_center_m": 0.0,
+      "width_m": 0.9,
+      "height_m": 0.7,
+      "top_z_m": 0.35,
+      "bottom_z_m": -0.35,
+      "eq_radius_m": 0.3969
+    },
+    {
+      "label": "pod taper exit",
+      "x_m": 2.2,
+      "z_center_m": 0.0,
+      "width_m": 0.35,
+      "height_m": 0.3,
+      "top_z_m": 0.15,
+      "bottom_z_m": -0.15,
+      "eq_radius_m": 0.162
+    },
+    {
+      "label": "tail boom end",
+      "x_m": 4.2,
+      "z_center_m": 0.0,
+      "width_m": 0.18,
+      "height_m": 0.18,
+      "top_z_m": 0.09,
+      "bottom_z_m": -0.09,
+      "eq_radius_m": 0.09
+    }
+  ],
+  "segments": [
+    {
+      "from": "nose point",
+      "to": "forward cabin",
+      "dx_m": 0.55,
+      "radius_change_m": 0.3969,
+      "slope": 0.7216,
+      "angle_deg": 35.82
+    },
+    {
+      "from": "forward cabin",
+      "to": "aft cabin",
+      "dx_m": 0.88,
+      "radius_change_m": 0.0,
+      "slope": 0.0,
+      "angle_deg": 0.0
+    },
+    {
+      "from": "aft cabin",
+      "to": "pod taper exit",
+      "dx_m": 0.77,
+      "radius_change_m": -0.2349,
+      "slope": -0.3051,
+      "angle_deg": -16.97
+    },
+    {
+      "from": "pod taper exit",
+      "to": "tail boom end",
+      "dx_m": 2.0,
+      "radius_change_m": -0.072,
+      "slope": -0.036,
+      "angle_deg": -2.06
+    }
+  ],
+  "curvature": [
+    {
+      "station": "forward cabin",
+      "curvature_1_per_m": 0.7886,
+      "radius_of_curvature_m": 1.268
+    },
+    {
+      "station": "aft cabin",
+      "curvature_1_per_m": 0.3502,
+      "radius_of_curvature_m": 2.856
+    },
+    {
+      "station": "pod taper exit",
+      "curvature_1_per_m": 0.1846,
+      "radius_of_curvature_m": 5.418
+    }
+  ],
+  "centerline_segments": [
+    {
+      "from": "nose point",
+      "to": "forward cabin",
+      "dx_m": 0.55,
+      "z_change_m": 0.0,
+      "slope": 0.0,
+      "angle_deg": 0.0
+    },
+    {
+      "from": "forward cabin",
+      "to": "aft cabin",
+      "dx_m": 0.88,
+      "z_change_m": 0.0,
+      "slope": 0.0,
+      "angle_deg": 0.0
+    },
+    {
+      "from": "aft cabin",
+      "to": "pod taper exit",
+      "dx_m": 0.77,
+      "z_change_m": 0.0,
+      "slope": 0.0,
+      "angle_deg": 0.0
+    },
+    {
+      "from": "pod taper exit",
+      "to": "tail boom end",
+      "dx_m": 2.0,
+      "z_change_m": 0.0,
+      "slope": 0.0,
+      "angle_deg": 0.0
+    }
+  ],
+  "centerline_curvature": [
+    {
+      "station": "forward cabin",
+      "curvature_1_per_m": 0.0,
+      "radius_of_curvature_m": null
+    },
+    {
+      "station": "aft cabin",
+      "curvature_1_per_m": 0.0,
+      "radius_of_curvature_m": null
+    },
+    {
+      "station": "pod taper exit",
+      "curvature_1_per_m": 0.0,
+      "radius_of_curvature_m": null
+    }
+  ],
+  "surface_curve_lines": {
+    "top": {
+      "segments": [
+        {
+          "line": "top",
+          "from": "nose point",
+          "to": "forward cabin",
+          "dx_m": 0.55,
+          "value_change_m": 0.35,
+          "slope": 0.6364,
+          "angle_deg": 32.47
+        },
+        {
+          "line": "top",
+          "from": "forward cabin",
+          "to": "aft cabin",
+          "dx_m": 0.88,
+          "value_change_m": 0.0,
+          "slope": 0.0,
+          "angle_deg": 0.0
+        },
+        {
+          "line": "top",
+          "from": "aft cabin",
+          "to": "pod taper exit",
+          "dx_m": 0.77,
+          "value_change_m": -0.2,
+          "slope": -0.2597,
+          "angle_deg": -14.56
+        },
+        {
+          "line": "top",
+          "from": "pod taper exit",
+          "to": "tail boom end",
+          "dx_m": 2.0,
+          "value_change_m": -0.06,
+          "slope": -0.03,
+          "angle_deg": -1.72
+        }
+      ],
+      "curvature": [
+        {
+          "line": "top",
+          "station": "forward cabin",
+          "curvature_1_per_m": 0.7293,
+          "radius_of_curvature_m": 1.371
+        },
+        {
+          "line": "top",
+          "station": "aft cabin",
+          "curvature_1_per_m": 0.3025,
+          "radius_of_curvature_m": 3.306
+        },
+        {
+          "line": "top",
+          "station": "pod taper exit",
+          "curvature_1_per_m": 0.1598,
+          "radius_of_curvature_m": 6.259
+        }
+      ]
+    },
+    "bottom": {
+      "segments": [
+        {
+          "line": "bottom",
+          "from": "nose point",
+          "to": "forward cabin",
+          "dx_m": 0.55,
+          "value_change_m": -0.35,
+          "slope": -0.6364,
+          "angle_deg": -32.47
+        },
+        {
+          "line": "bottom",
+          "from": "forward cabin",
+          "to": "aft cabin",
+          "dx_m": 0.88,
+          "value_change_m": 0.0,
+          "slope": 0.0,
+          "angle_deg": 0.0
+        },
+        {
+          "line": "bottom",
+          "from": "aft cabin",
+          "to": "pod taper exit",
+          "dx_m": 0.77,
+          "value_change_m": 0.2,
+          "slope": 0.2597,
+          "angle_deg": 14.56
+        },
+        {
+          "line": "bottom",
+          "from": "pod taper exit",
+          "to": "tail boom end",
+          "dx_m": 2.0,
+          "value_change_m": 0.06,
+          "slope": 0.03,
+          "angle_deg": 1.72
+        }
+      ],
+      "curvature": [
+        {
+          "line": "bottom",
+          "station": "forward cabin",
+          "curvature_1_per_m": 0.7293,
+          "radius_of_curvature_m": 1.371
+        },
+        {
+          "line": "bottom",
+          "station": "aft cabin",
+          "curvature_1_per_m": 0.3025,
+          "radius_of_curvature_m": 3.306
+        },
+        {
+          "line": "bottom",
+          "station": "pod taper exit",
+          "curvature_1_per_m": 0.1598,
+          "radius_of_curvature_m": 6.259
+        }
+      ]
+    },
+    "side_half_width": {
+      "segments": [
+        {
+          "line": "side_half_width",
+          "from": "nose point",
+          "to": "forward cabin",
+          "dx_m": 0.55,
+          "value_change_m": 0.45,
+          "slope": 0.8182,
+          "angle_deg": 39.29
+        },
+        {
+          "line": "side_half_width",
+          "from": "forward cabin",
+          "to": "aft cabin",
+          "dx_m": 0.88,
+          "value_change_m": 0.0,
+          "slope": 0.0,
+          "angle_deg": 0.0
+        },
+        {
+          "line": "side_half_width",
+          "from": "aft cabin",
+          "to": "pod taper exit",
+          "dx_m": 0.77,
+          "value_change_m": -0.275,
+          "slope": -0.3571,
+          "angle_deg": -19.65
+        },
+        {
+          "line": "side_half_width",
+          "from": "pod taper exit",
+          "to": "tail boom end",
+          "dx_m": 2.0,
+          "value_change_m": -0.085,
+          "slope": -0.0425,
+          "angle_deg": -2.43
+        }
+      ],
+      "curvature": [
+        {
+          "line": "side_half_width",
+          "station": "forward cabin",
+          "curvature_1_per_m": 0.8448,
+          "radius_of_curvature_m": 1.184
+        },
+        {
+          "line": "side_half_width",
+          "station": "aft cabin",
+          "curvature_1_per_m": 0.4021,
+          "radius_of_curvature_m": 2.487
+        },
+        {
+          "line": "side_half_width",
+          "station": "pod taper exit",
+          "curvature_1_per_m": 0.212,
+          "radius_of_curvature_m": 4.718
+        }
+      ]
+    }
+  }
+}

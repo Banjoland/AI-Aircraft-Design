@@ -1,0 +1,20 @@
+{
+  "model": "MODEL_04_30_23_02_47.vsp3",
+  "sim_file": "MODEL_04_30_23_02_47_alpha_sweep.json",
+  "stall_cost": 0.0004,
+  "stall_note": "V_stall 22.37 > 22.35 m/s \u2014 penalty 0.000",
+  "stability_cost": 0.1252,
+  "stability_note": "Cm_alpha = -0.13945/deg -> 7.9899/rad; stability cost = 0.1252",
+  "cruise_reward": 2.2012,
+  "cruise_note": "V_cruise 63.15 m/s vs ref 50.0 m/s \u2014 reward 2.2012",
+  "total_cost": -2.0756,
+  "inputs": {
+    "vstall_ms": 22.37,
+    "vstall_spec_ms": 22.35,
+    "vcruise_ms": 63.15,
+    "vcruise_ref_ms": 50.0,
+    "cm_alpha_per_deg": -0.13945,
+    "longitudinal_stable": true
+  },
+  "summary": "total=-2.08  (stall=0.00  stability=0.13  cruise_reward=2.20)"
+}

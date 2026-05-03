@@ -1,0 +1,293 @@
+{
+  "created_at": "2026-05-01T09:23:42",
+  "generator": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\baseline_generator\\generate.py",
+  "latest_score_file": null,
+  "latest_model": null,
+  "latest_total_cost": null,
+  "best_score_file": null,
+  "best_model": null,
+  "best_total_cost": null,
+  "best_is_compliant": null,
+  "best_compliant_score_file": null,
+  "best_compliant_model": null,
+  "best_compliant_total_cost": null,
+  "latest_is_best": false,
+  "latest_is_best_compliant": false,
+  "baseline_metrics": {
+    "wing_area_m2": 6.86,
+    "aspect_ratio": 14.0,
+    "wing_mac_m": 0.7122,
+    "htail_area_m2": 0.988,
+    "tail_arm_m": 2.6184,
+    "horizontal_tail_volume": 0.5295,
+    "vstall_est_ms": 20.5095,
+    "empty_mass_est_kg": 244.0333,
+    "wetted_area_m2": 32.6722
+  },
+  "recommended_next": "increase_horizontal_tail_chord",
+  "candidates": [
+    {
+      "name": "increase_horizontal_tail_chord",
+      "feature": "Horizontal tail area",
+      "rationale": "Current dominant penalty is stability cost. Increasing tail area is the lowest-disruption way to raise horizontal tail volume.",
+      "changes": {
+        "htail_root_chord": 1.5,
+        "htail_tip_chord": 1.1
+      },
+      "all_requested_changes": {
+        "htail_root_chord": 1.5,
+        "htail_tip_chord": 1.1
+      },
+      "heuristic_score": 5.781,
+      "creativity": 0.35,
+      "risk": 0.2,
+      "constraint_violations": [
+        "empty mass 273.3 kg exceeds 110.0 kg"
+      ],
+      "estimated_metrics": {
+        "wing_area_m2": 6.86,
+        "aspect_ratio": 14.0,
+        "wing_mac_m": 0.7122,
+        "htail_area_m2": 3.38,
+        "tail_arm_m": 2.8495,
+        "horizontal_tail_volume": 1.9714,
+        "vstall_est_ms": 20.5095,
+        "empty_mass_est_kg": 273.3114,
+        "wetted_area_m2": 37.5519
+      },
+      "delta_metrics": {
+        "wing_area_m2": 0.0,
+        "aspect_ratio": 0.0,
+        "wing_mac_m": 0.0,
+        "htail_area_m2": 2.392,
+        "tail_arm_m": 0.2312,
+        "horizontal_tail_volume": 1.4419,
+        "vstall_est_ms": 0.0,
+        "empty_mass_est_kg": 29.2781,
+        "wetted_area_m2": 4.8797
+      },
+      "score_reasons": [
+        "tail volume increases by 1.442",
+        "estimated stall remains below spec by 0.49 m/s",
+        "empty mass estimate changes by +29.3 kg"
+      ]
+    },
+    {
+      "name": "restore_short_body_with_larger_tail_chords",
+      "feature": "Fuselage length and horizontal tail chord package",
+      "rationale": "The log shows the 9.0 m fuselage regressed despite better nominal tail arm. Return to the lighter 6.5 m body and recover tail volume through chord.",
+      "changes": {
+        "fuse_length": 6.5,
+        "htail_x": 3.5999999999999996,
+        "vtail_x": 5.1,
+        "htail_root_chord": 1.5,
+        "htail_tip_chord": 1.1
+      },
+      "all_requested_changes": {
+        "fuse_length": 6.5,
+        "htail_x": 3.5999999999999996,
+        "vtail_x": 5.1,
+        "htail_root_chord": 1.5,
+        "htail_tip_chord": 1.1
+      },
+      "heuristic_score": 4.7833,
+      "creativity": 0.65,
+      "risk": 0.35,
+      "constraint_violations": [
+        "empty mass 311.8 kg exceeds 110.0 kg"
+      ],
+      "estimated_metrics": {
+        "wing_area_m2": 6.86,
+        "aspect_ratio": 14.0,
+        "wing_mac_m": 0.7122,
+        "htail_area_m2": 3.38,
+        "tail_arm_m": 2.5995,
+        "horizontal_tail_volume": 1.7984,
+        "vstall_est_ms": 20.5095,
+        "empty_mass_est_kg": 311.8116,
+        "wetted_area_m2": 43.9686
+      },
+      "delta_metrics": {
+        "wing_area_m2": 0.0,
+        "aspect_ratio": 0.0,
+        "wing_mac_m": 0.0,
+        "htail_area_m2": 2.392,
+        "tail_arm_m": -0.0188,
+        "horizontal_tail_volume": 1.2689,
+        "vstall_est_ms": 0.0,
+        "empty_mass_est_kg": 67.7783,
+        "wetted_area_m2": 11.2964
+      },
+      "score_reasons": [
+        "tail volume increases by 1.269",
+        "estimated stall remains below spec by 0.49 m/s",
+        "empty mass estimate changes by +67.8 kg"
+      ]
+    },
+    {
+      "name": "increase_washout",
+      "feature": "Wing twist",
+      "rationale": "More washout supports the specified root-first stall progression and may improve stall safety without changing span.",
+      "changes": {
+        "wing_twist": -4.5
+      },
+      "all_requested_changes": {
+        "wing_twist": -4.5
+      },
+      "heuristic_score": 0.23,
+      "creativity": 0.4,
+      "risk": 0.3,
+      "constraint_violations": [
+        "empty mass 244.0 kg exceeds 110.0 kg"
+      ],
+      "estimated_metrics": {
+        "wing_area_m2": 6.86,
+        "aspect_ratio": 14.0,
+        "wing_mac_m": 0.7122,
+        "htail_area_m2": 0.988,
+        "tail_arm_m": 2.6184,
+        "horizontal_tail_volume": 0.5295,
+        "vstall_est_ms": 20.5095,
+        "empty_mass_est_kg": 244.0333,
+        "wetted_area_m2": 32.6722
+      },
+      "delta_metrics": {
+        "wing_area_m2": 0.0,
+        "aspect_ratio": 0.0,
+        "wing_mac_m": 0.0,
+        "htail_area_m2": 0.0,
+        "tail_arm_m": 0.0,
+        "horizontal_tail_volume": 0.0,
+        "vstall_est_ms": 0.0,
+        "empty_mass_est_kg": 0.0,
+        "wetted_area_m2": 0.0
+      },
+      "score_reasons": [
+        "estimated stall remains below spec by 0.49 m/s"
+      ]
+    },
+    {
+      "name": "move_main_wing_aft",
+      "feature": "Wing longitudinal placement relative to CG",
+      "rationale": "Moving the wing aft increases static margin and can strengthen Cm_alpha without increasing wetted area.",
+      "changes": {
+        "wing_x": 1.4
+      },
+      "all_requested_changes": {
+        "wing_x": 1.4
+      },
+      "heuristic_score": 0.1825,
+      "creativity": 0.45,
+      "risk": 0.45,
+      "constraint_violations": [
+        "empty mass 244.0 kg exceeds 110.0 kg"
+      ],
+      "estimated_metrics": {
+        "wing_area_m2": 6.86,
+        "aspect_ratio": 14.0,
+        "wing_mac_m": 0.7122,
+        "htail_area_m2": 0.988,
+        "tail_arm_m": 2.3684,
+        "horizontal_tail_volume": 0.4789,
+        "vstall_est_ms": 20.5095,
+        "empty_mass_est_kg": 244.0333,
+        "wetted_area_m2": 32.6722
+      },
+      "delta_metrics": {
+        "wing_area_m2": 0.0,
+        "aspect_ratio": 0.0,
+        "wing_mac_m": 0.0,
+        "htail_area_m2": 0.0,
+        "tail_arm_m": -0.25,
+        "horizontal_tail_volume": -0.0506,
+        "vstall_est_ms": 0.0,
+        "empty_mass_est_kg": 0.0,
+        "wetted_area_m2": 0.0
+      },
+      "score_reasons": [
+        "estimated stall remains below spec by 0.49 m/s"
+      ]
+    },
+    {
+      "name": "raise_wing_to_mid_mount",
+      "feature": "Wing vertical placement",
+      "rationale": "A mid-mounted wing may reduce fuselage interference in the VLM model and opens a cleaner cockpit sightline trade study.",
+      "changes": {
+        "wing_z": 0.0
+      },
+      "all_requested_changes": {
+        "wing_z": 0.0
+      },
+      "heuristic_score": 0.1675,
+      "creativity": 0.55,
+      "risk": 0.55,
+      "constraint_violations": [
+        "empty mass 244.0 kg exceeds 110.0 kg"
+      ],
+      "estimated_metrics": {
+        "wing_area_m2": 6.86,
+        "aspect_ratio": 14.0,
+        "wing_mac_m": 0.7122,
+        "htail_area_m2": 0.988,
+        "tail_arm_m": 2.6184,
+        "horizontal_tail_volume": 0.5295,
+        "vstall_est_ms": 20.5095,
+        "empty_mass_est_kg": 244.0333,
+        "wetted_area_m2": 32.6722
+      },
+      "delta_metrics": {
+        "wing_area_m2": 0.0,
+        "aspect_ratio": 0.0,
+        "wing_mac_m": 0.0,
+        "htail_area_m2": 0.0,
+        "tail_arm_m": 0.0,
+        "horizontal_tail_volume": 0.0,
+        "vstall_est_ms": 0.0,
+        "empty_mass_est_kg": 0.0,
+        "wetted_area_m2": 0.0
+      },
+      "score_reasons": [
+        "estimated stall remains below spec by 0.49 m/s"
+      ]
+    },
+    {
+      "name": "canard_stall_safety_probe",
+      "feature": "Canard configuration",
+      "rationale": "The specification explicitly encourages canard or tandem concepts for stall safety. This report flags it as a high-creativity branch requiring a new geometry generator before simulation.",
+      "changes": {},
+      "all_requested_changes": {},
+      "heuristic_score": 0.1475,
+      "creativity": 0.95,
+      "risk": 0.85,
+      "constraint_violations": [
+        "empty mass 244.0 kg exceeds 110.0 kg",
+        "requires new OpenVSP canard/tandem generator before direct simulation"
+      ],
+      "estimated_metrics": {
+        "wing_area_m2": 6.86,
+        "aspect_ratio": 14.0,
+        "wing_mac_m": 0.7122,
+        "htail_area_m2": 0.988,
+        "tail_arm_m": 2.6184,
+        "horizontal_tail_volume": 0.5295,
+        "vstall_est_ms": 20.5095,
+        "empty_mass_est_kg": 244.0333,
+        "wetted_area_m2": 32.6722
+      },
+      "delta_metrics": {
+        "wing_area_m2": 0.0,
+        "aspect_ratio": 0.0,
+        "wing_mac_m": 0.0,
+        "htail_area_m2": 0.0,
+        "tail_arm_m": 0.0,
+        "horizontal_tail_volume": 0.0,
+        "vstall_est_ms": 0.0,
+        "empty_mass_est_kg": 0.0,
+        "wetted_area_m2": 0.0
+      },
+      "score_reasons": [
+        "estimated stall remains below spec by 0.49 m/s"
+      ]
+    }
+  ]
+}

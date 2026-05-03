@@ -1,0 +1,107 @@
+{
+  "model": "MODEL_05_02_2026_07.vsp3",
+  "analysis": "VSPAEROSweep_VLM_beta",
+  "alpha_fixed_deg": 4.0,
+  "mach": 0.15,
+  "beta_range_deg": [
+    -15.0,
+    15.0
+  ],
+  "beta_npts_requested": 11,
+  "beta_npts_obtained": 11,
+  "reference": {
+    "mtow_kg": 218.0,
+    "wing_area_m2": 4.75,
+    "wing_span_m": 9.8,
+    "wing_mac_m": 0.494,
+    "x_cg_m": 2.35,
+    "engine_power_w": 13422.6
+  },
+  "sweep_table": [
+    {
+      "beta_deg": -15.0,
+      "CY": 0.0,
+      "Cl": 0.003739,
+      "Cn": -0.058127,
+      "CL_lift": 0.482375
+    },
+    {
+      "beta_deg": -12.0,
+      "CY": 0.0,
+      "Cl": 0.003698,
+      "Cn": -0.08794,
+      "CL_lift": 0.506265
+    },
+    {
+      "beta_deg": -9.0,
+      "CY": 0.0,
+      "Cl": 0.030758,
+      "Cn": -0.06316,
+      "CL_lift": 0.639663
+    },
+    {
+      "beta_deg": -6.0,
+      "CY": 0.0,
+      "Cl": -0.009431,
+      "Cn": -0.025272,
+      "CL_lift": 0.839068
+    },
+    {
+      "beta_deg": -3.0,
+      "CY": 0.0,
+      "Cl": 0.020938,
+      "Cn": -0.054032,
+      "CL_lift": 0.729334
+    },
+    {
+      "beta_deg": 0.0,
+      "CY": 0.0,
+      "Cl": 0.021467,
+      "Cn": -0.043086,
+      "CL_lift": 0.817798
+    },
+    {
+      "beta_deg": 3.0,
+      "CY": 0.0,
+      "Cl": 0.021281,
+      "Cn": -0.022108,
+      "CL_lift": 0.851332
+    },
+    {
+      "beta_deg": 6.0,
+      "CY": 0.0,
+      "Cl": 0.019068,
+      "Cn": -0.010364,
+      "CL_lift": 0.871556
+    },
+    {
+      "beta_deg": 9.0,
+      "CY": 0.0,
+      "Cl": 0.025384,
+      "Cn": -0.019044,
+      "CL_lift": 0.81715
+    },
+    {
+      "beta_deg": 12.0,
+      "CY": 0.0,
+      "Cl": 0.023081,
+      "Cn": 0.001507,
+      "CL_lift": 0.815843
+    },
+    {
+      "beta_deg": 15.0,
+      "CY": 0.0,
+      "Cl": 0.007679,
+      "Cn": 0.041812,
+      "CL_lift": 0.606285
+    }
+  ],
+  "CY_beta": 0.0,
+  "Cl_beta": 0.02404,
+  "Cn_beta": 0.18258,
+  "directionally_stable": true,
+  "dihedral_effect": false,
+  "Cn_beta_sign": "positive (stable)",
+  "Cl_beta_sign": "positive (adverse/no dihedral)",
+  "beta_sweep_failed": false
+}

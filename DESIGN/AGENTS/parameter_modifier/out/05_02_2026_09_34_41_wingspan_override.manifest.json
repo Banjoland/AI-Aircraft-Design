@@ -1,0 +1,14 @@
+{
+  "feature": "wingspan",
+  "slug": "wingspan",
+  "status": "implemented",
+  "method": "baseline_generator override",
+  "allowed_parameters": [
+    "wing_span"
+  ],
+  "override_file": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\parameter_modifier\\out\\05_02_2026_09_34_41_wingspan_override.json",
+  "override": {
+    "wing_span": 10.0
+  },
+  "generator": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\baseline_generator\\generate.py"
+}

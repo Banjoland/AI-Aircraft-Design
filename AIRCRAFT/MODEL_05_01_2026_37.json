@@ -1,0 +1,23 @@
+{
+  "model_file": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\AIRCRAFT\\MODEL_05_01_2026_37.vsp3",
+  "configuration": "conventional_tractor",
+  "wing_area_m2": 4.98,
+  "aspect_ratio": 17.74,
+  "wing_mac_m": 0.541,
+  "htail_area_m2": 0.43,
+  "vtail_area_m2": 0.16,
+  "prop_diameter_m": 1.2,
+  "fuse_length_m": 3.82,
+  "mtow_kg": 218.0,
+  "vstall_est_ms": 20.3,
+  "vstall_limit_ms": 21.0,
+  "vstall_margin_ok": true,
+  "wingspan_m": 9.4,
+  "wingspan_limit_m": 15.0,
+  "wingspan_ok": true,
+  "s_min_m2": 4.66,
+  "total_wetted_area_m2": 22.9,
+  "empty_mass_est_kg": 185.4,
+  "empty_mass_spec_kg": 110.0,
+  "empty_mass_ok": false
+}

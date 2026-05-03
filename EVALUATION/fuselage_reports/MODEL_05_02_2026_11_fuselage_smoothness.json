@@ -1,0 +1,1092 @@
+{
+  "model": "MODEL_05_02_2026_11.vsp3",
+  "source_json": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\AIRCRAFT\\MODEL_05_02_2026_11.json",
+  "configuration": "single_smooth_full_fuselage",
+  "summary": {
+    "total_profile_length_m": 5.6,
+    "max_equivalent_diameter_m": 1.285,
+    "fineness_ratio": 4.36,
+    "max_radius_profile_curvature_1_per_m": 0.8037,
+    "max_profile_slope_angle_deg": 20.83,
+    "max_centerline_curvature_1_per_m": 0.5332,
+    "max_centerline_slope_angle_deg": 18.0,
+    "max_surface_curve_curvature_1_per_m": 0.8525,
+    "max_surface_curve_slope_angle_deg": 34.22,
+    "smoothness_score_0_100": 57.6,
+    "pressure_recovery_risk": "high"
+  },
+  "findings": [
+    "steep aft pressure-recovery taper 16.3 deg",
+    "localized radius-profile curvature 0.80 1/m"
+  ],
+  "recommendations": [
+    "Add intermediate fuselage sections or increase pod/boom transition length.",
+    "Reduce aft taper angle toward 10-12 deg for pressure recovery."
+  ],
+  "assumptions": [],
+  "stations": [
+    {
+      "label": "nose close",
+      "x_m": 0.0,
+      "z_center_m": -0.25,
+      "width_m": 0.08,
+      "height_m": 0.1,
+      "top_z_m": -0.2,
+      "bottom_z_m": -0.3,
+      "eq_radius_m": 0.0447
+    },
+    {
+      "label": "nose lower rise",
+      "x_m": 0.55,
+      "z_center_m": -0.22,
+      "width_m": 0.36,
+      "height_m": 0.4,
+      "top_z_m": -0.02,
+      "bottom_z_m": -0.42,
+      "eq_radius_m": 0.1897
+    },
+    {
+      "label": "engine bay start",
+      "x_m": 0.95,
+      "z_center_m": -0.09,
+      "width_m": 0.66,
+      "height_m": 0.68,
+      "top_z_m": 0.25,
+      "bottom_z_m": -0.43,
+      "eq_radius_m": 0.335
+    },
+    {
+      "label": "engine bay center",
+      "x_m": 1.35,
+      "z_center_m": -0.0271,
+      "width_m": 0.6755,
+      "height_m": 0.7258,
+      "top_z_m": 0.3358,
+      "bottom_z_m": -0.39,
+      "eq_radius_m": 0.3501
+    },
+    {
+      "label": "engine bay end",
+      "x_m": 1.75,
+      "z_center_m": 0.035,
+      "width_m": 0.68,
+      "height_m": 0.77,
+      "top_z_m": 0.42,
+      "bottom_z_m": -0.35,
+      "eq_radius_m": 0.3618
+    },
+    {
+      "label": "cockpit rise",
+      "x_m": 2.15,
+      "z_center_m": 0.12,
+      "width_m": 0.9436,
+      "height_m": 1.1199,
+      "top_z_m": 0.6799,
+      "bottom_z_m": -0.4399,
+      "eq_radius_m": 0.514
+    },
+    {
+      "label": "cg cockpit",
+      "x_m": 2.65,
+      "z_center_m": 0.27,
+      "width_m": 1.1,
+      "height_m": 1.5,
+      "top_z_m": 1.02,
+      "bottom_z_m": -0.48,
+      "eq_radius_m": 0.6423
+    },
+    {
+      "label": "high wing saddle",
+      "x_m": 3.05,
+      "z_center_m": 0.365,
+      "width_m": 1.0,
+      "height_m": 1.47,
+      "top_z_m": 1.1,
+      "bottom_z_m": -0.37,
+      "eq_radius_m": 0.6062
+    },
+    {
+      "label": "aft cabin recovery",
+      "x_m": 3.55,
+      "z_center_m": 0.4516,
+      "width_m": 0.8172,
+      "height_m": 1.2278,
+      "top_z_m": 1.0655,
+      "bottom_z_m": -0.1623,
+      "eq_radius_m": 0.5008
+    },
+    {
+      "label": "tail wake fairing forward",
+      "x_m": 4.05,
+      "z_center_m": 0.5221,
+      "width_m": 0.6268,
+      "height_m": 0.9733,
+      "top_z_m": 1.0088,
+      "bottom_z_m": 0.0354,
+      "eq_radius_m": 0.3905
+    },
+    {
+      "label": "tail wake fairing mid",
+      "x_m": 4.45,
+      "z_center_m": 0.57,
+      "width_m": 0.48,
+      "height_m": 0.78,
+      "top_z_m": 0.96,
+      "bottom_z_m": 0.18,
+      "eq_radius_m": 0.3059
+    },
+    {
+      "label": "stabilizer pedestal",
+      "x_m": 4.85,
+      "z_center_m": 0.6177,
+      "width_m": 0.3581,
+      "height_m": 0.6267,
+      "top_z_m": 0.9311,
+      "bottom_z_m": 0.3044,
+      "eq_radius_m": 0.2369
+    },
+    {
+      "label": "short tail closeout",
+      "x_m": 5.2,
+      "z_center_m": 0.6089,
+      "width_m": 0.1974,
+      "height_m": 0.3666,
+      "top_z_m": 0.7922,
+      "bottom_z_m": 0.4256,
+      "eq_radius_m": 0.1345
+    },
+    {
+      "label": "tail close",
+      "x_m": 5.6,
+      "z_center_m": 0.56,
+      "width_m": 0.12,
+      "height_m": 0.2,
+      "top_z_m": 0.66,
+      "bottom_z_m": 0.46,
+      "eq_radius_m": 0.0775
+    }
+  ],
+  "segments": [
+    {
+      "from": "nose close",
+      "to": "nose lower rise",
+      "dx_m": 0.55,
+      "radius_change_m": 0.145,
+      "slope": 0.2636,
+      "angle_deg": 14.77
+    },
+    {
+      "from": "nose lower rise",
+      "to": "engine bay start",
+      "dx_m": 0.4,
+      "radius_change_m": 0.1453,
+      "slope": 0.3633,
+      "angle_deg": 19.96
+    },
+    {
+      "from": "engine bay start",
+      "to": "engine bay center",
+      "dx_m": 0.4,
+      "radius_change_m": 0.0151,
+      "slope": 0.0377,
+      "angle_deg": 2.16
+    },
+    {
+      "from": "engine bay center",
+      "to": "engine bay end",
+      "dx_m": 0.4,
+      "radius_change_m": 0.0117,
+      "slope": 0.0292,
+      "angle_deg": 1.68
+    },
+    {
+      "from": "engine bay end",
+      "to": "cockpit rise",
+      "dx_m": 0.4,
+      "radius_change_m": 0.1522,
+      "slope": 0.3805,
+      "angle_deg": 20.83
+    },
+    {
+      "from": "cockpit rise",
+      "to": "cg cockpit",
+      "dx_m": 0.5,
+      "radius_change_m": 0.1283,
+      "slope": 0.2566,
+      "angle_deg": 14.39
+    },
+    {
+      "from": "cg cockpit",
+      "to": "high wing saddle",
+      "dx_m": 0.4,
+      "radius_change_m": -0.0361,
+      "slope": -0.0903,
+      "angle_deg": -5.16
+    },
+    {
+      "from": "high wing saddle",
+      "to": "aft cabin recovery",
+      "dx_m": 0.5,
+      "radius_change_m": -0.1054,
+      "slope": -0.2108,
+      "angle_deg": -11.9
+    },
+    {
+      "from": "aft cabin recovery",
+      "to": "tail wake fairing forward",
+      "dx_m": 0.5,
+      "radius_change_m": -0.1103,
+      "slope": -0.2206,
+      "angle_deg": -12.44
+    },
+    {
+      "from": "tail wake fairing forward",
+      "to": "tail wake fairing mid",
+      "dx_m": 0.4,
+      "radius_change_m": -0.0846,
+      "slope": -0.2115,
+      "angle_deg": -11.94
+    },
+    {
+      "from": "tail wake fairing mid",
+      "to": "stabilizer pedestal",
+      "dx_m": 0.4,
+      "radius_change_m": -0.069,
+      "slope": -0.1725,
+      "angle_deg": -9.79
+    },
+    {
+      "from": "stabilizer pedestal",
+      "to": "short tail closeout",
+      "dx_m": 0.35,
+      "radius_change_m": -0.1024,
+      "slope": -0.2926,
+      "angle_deg": -16.31
+    },
+    {
+      "from": "short tail closeout",
+      "to": "tail close",
+      "dx_m": 0.4,
+      "radius_change_m": -0.057,
+      "slope": -0.1425,
+      "angle_deg": -8.11
+    }
+  ],
+  "curvature": [
+    {
+      "station": "nose lower rise",
+      "curvature_1_per_m": 0.1823,
+      "radius_of_curvature_m": 5.486
+    },
+    {
+      "station": "engine bay start",
+      "curvature_1_per_m": 0.7494,
+      "radius_of_curvature_m": 1.334
+    },
+    {
+      "station": "engine bay center",
+      "curvature_1_per_m": 0.0212,
+      "radius_of_curvature_m": 47.139
+    },
+    {
+      "station": "engine bay end",
+      "curvature_1_per_m": 0.8037,
+      "radius_of_curvature_m": 1.244
+    },
+    {
+      "station": "cockpit rise",
+      "curvature_1_per_m": 0.238,
+      "radius_of_curvature_m": 4.202
+    },
+    {
+      "station": "cg cockpit",
+      "curvature_1_per_m": 0.7397,
+      "radius_of_curvature_m": 1.352
+    },
+    {
+      "station": "high wing saddle",
+      "curvature_1_per_m": 0.2579,
+      "radius_of_curvature_m": 3.877
+    },
+    {
+      "station": "aft cabin recovery",
+      "curvature_1_per_m": 0.0183,
+      "radius_of_curvature_m": 54.623
+    },
+    {
+      "station": "tail wake fairing forward",
+      "curvature_1_per_m": 0.0189,
+      "radius_of_curvature_m": 52.959
+    },
+    {
+      "station": "tail wake fairing mid",
+      "curvature_1_per_m": 0.0923,
+      "radius_of_curvature_m": 10.832
+    },
+    {
+      "station": "stabilizer pedestal",
+      "curvature_1_per_m": 0.2952,
+      "radius_of_curvature_m": 3.387
+    },
+    {
+      "station": "short tail closeout",
+      "curvature_1_per_m": 0.3719,
+      "radius_of_curvature_m": 2.689
+    }
+  ],
+  "centerline_segments": [
+    {
+      "from": "nose close",
+      "to": "nose lower rise",
+      "dx_m": 0.55,
+      "z_change_m": 0.03,
+      "slope": 0.0545,
+      "angle_deg": 3.12
+    },
+    {
+      "from": "nose lower rise",
+      "to": "engine bay start",
+      "dx_m": 0.4,
+      "z_change_m": 0.13,
+      "slope": 0.325,
+      "angle_deg": 18.0
+    },
+    {
+      "from": "engine bay start",
+      "to": "engine bay center",
+      "dx_m": 0.4,
+      "z_change_m": 0.0629,
+      "slope": 0.1572,
+      "angle_deg": 8.94
+    },
+    {
+      "from": "engine bay center",
+      "to": "engine bay end",
+      "dx_m": 0.4,
+      "z_change_m": 0.0621,
+      "slope": 0.1553,
+      "angle_deg": 8.82
+    },
+    {
+      "from": "engine bay end",
+      "to": "cockpit rise",
+      "dx_m": 0.4,
+      "z_change_m": 0.085,
+      "slope": 0.2125,
+      "angle_deg": 12.0
+    },
+    {
+      "from": "cockpit rise",
+      "to": "cg cockpit",
+      "dx_m": 0.5,
+      "z_change_m": 0.15,
+      "slope": 0.3,
+      "angle_deg": 16.7
+    },
+    {
+      "from": "cg cockpit",
+      "to": "high wing saddle",
+      "dx_m": 0.4,
+      "z_change_m": 0.095,
+      "slope": 0.2375,
+      "angle_deg": 13.36
+    },
+    {
+      "from": "high wing saddle",
+      "to": "aft cabin recovery",
+      "dx_m": 0.5,
+      "z_change_m": 0.0866,
+      "slope": 0.1732,
+      "angle_deg": 9.83
+    },
+    {
+      "from": "aft cabin recovery",
+      "to": "tail wake fairing forward",
+      "dx_m": 0.5,
+      "z_change_m": 0.0705,
+      "slope": 0.141,
+      "angle_deg": 8.03
+    },
+    {
+      "from": "tail wake fairing forward",
+      "to": "tail wake fairing mid",
+      "dx_m": 0.4,
+      "z_change_m": 0.0479,
+      "slope": 0.1197,
+      "angle_deg": 6.83
+    },
+    {
+      "from": "tail wake fairing mid",
+      "to": "stabilizer pedestal",
+      "dx_m": 0.4,
+      "z_change_m": 0.0477,
+      "slope": 0.1193,
+      "angle_deg": 6.8
+    },
+    {
+      "from": "stabilizer pedestal",
+      "to": "short tail closeout",
+      "dx_m": 0.35,
+      "z_change_m": -0.0088,
+      "slope": -0.0251,
+      "angle_deg": -1.44
+    },
+    {
+      "from": "short tail closeout",
+      "to": "tail close",
+      "dx_m": 0.4,
+      "z_change_m": -0.0489,
+      "slope": -0.1223,
+      "angle_deg": -6.97
+    }
+  ],
+  "centerline_curvature": [
+    {
+      "station": "nose lower rise",
+      "curvature_1_per_m": 0.5332,
+      "radius_of_curvature_m": 1.876
+    },
+    {
+      "station": "engine bay start",
+      "curvature_1_per_m": 0.383,
+      "radius_of_curvature_m": 2.611
+    },
+    {
+      "station": "engine bay center",
+      "curvature_1_per_m": 0.0048,
+      "radius_of_curvature_m": 207.369
+    },
+    {
+      "station": "engine bay end",
+      "curvature_1_per_m": 0.1361,
+      "radius_of_curvature_m": 7.35
+    },
+    {
+      "station": "cockpit rise",
+      "curvature_1_per_m": 0.1763,
+      "radius_of_curvature_m": 5.673
+    },
+    {
+      "station": "cg cockpit",
+      "curvature_1_per_m": 0.1249,
+      "radius_of_curvature_m": 8.007
+    },
+    {
+      "station": "high wing saddle",
+      "curvature_1_per_m": 0.1343,
+      "radius_of_curvature_m": 7.447
+    },
+    {
+      "station": "aft cabin recovery",
+      "curvature_1_per_m": 0.0621,
+      "radius_of_curvature_m": 16.11
+    },
+    {
+      "station": "tail wake fairing forward",
+      "curvature_1_per_m": 0.046,
+      "radius_of_curvature_m": 21.724
+    },
+    {
+      "station": "tail wake fairing mid",
+      "curvature_1_per_m": 0.0012,
+      "radius_of_curvature_m": 817.197
+    },
+    {
+      "station": "stabilizer pedestal",
+      "curvature_1_per_m": 0.3817,
+      "radius_of_curvature_m": 2.62
+    },
+    {
+      "station": "short tail closeout",
+      "curvature_1_per_m": 0.2562,
+      "radius_of_curvature_m": 3.903
+    }
+  ],
+  "surface_curve_lines": {
+    "top": {
+      "segments": [
+        {
+          "line": "top",
+          "from": "nose close",
+          "to": "nose lower rise",
+          "dx_m": 0.55,
+          "value_change_m": 0.18,
+          "slope": 0.3273,
+          "angle_deg": 18.12
+        },
+        {
+          "line": "top",
+          "from": "nose lower rise",
+          "to": "engine bay start",
+          "dx_m": 0.4,
+          "value_change_m": 0.27,
+          "slope": 0.675,
+          "angle_deg": 34.02
+        },
+        {
+          "line": "top",
+          "from": "engine bay start",
+          "to": "engine bay center",
+          "dx_m": 0.4,
+          "value_change_m": 0.0858,
+          "slope": 0.2145,
+          "angle_deg": 12.11
+        },
+        {
+          "line": "top",
+          "from": "engine bay center",
+          "to": "engine bay end",
+          "dx_m": 0.4,
+          "value_change_m": 0.0842,
+          "slope": 0.2105,
+          "angle_deg": 11.89
+        },
+        {
+          "line": "top",
+          "from": "engine bay end",
+          "to": "cockpit rise",
+          "dx_m": 0.4,
+          "value_change_m": 0.2599,
+          "slope": 0.6498,
+          "angle_deg": 33.01
+        },
+        {
+          "line": "top",
+          "from": "cockpit rise",
+          "to": "cg cockpit",
+          "dx_m": 0.5,
+          "value_change_m": 0.3401,
+          "slope": 0.6802,
+          "angle_deg": 34.22
+        },
+        {
+          "line": "top",
+          "from": "cg cockpit",
+          "to": "high wing saddle",
+          "dx_m": 0.4,
+          "value_change_m": 0.08,
+          "slope": 0.2,
+          "angle_deg": 11.31
+        },
+        {
+          "line": "top",
+          "from": "high wing saddle",
+          "to": "aft cabin recovery",
+          "dx_m": 0.5,
+          "value_change_m": -0.0345,
+          "slope": -0.069,
+          "angle_deg": -3.95
+        },
+        {
+          "line": "top",
+          "from": "aft cabin recovery",
+          "to": "tail wake fairing forward",
+          "dx_m": 0.5,
+          "value_change_m": -0.0567,
+          "slope": -0.1134,
+          "angle_deg": -6.47
+        },
+        {
+          "line": "top",
+          "from": "tail wake fairing forward",
+          "to": "tail wake fairing mid",
+          "dx_m": 0.4,
+          "value_change_m": -0.0488,
+          "slope": -0.122,
+          "angle_deg": -6.96
+        },
+        {
+          "line": "top",
+          "from": "tail wake fairing mid",
+          "to": "stabilizer pedestal",
+          "dx_m": 0.4,
+          "value_change_m": -0.0289,
+          "slope": -0.0722,
+          "angle_deg": -4.13
+        },
+        {
+          "line": "top",
+          "from": "stabilizer pedestal",
+          "to": "short tail closeout",
+          "dx_m": 0.35,
+          "value_change_m": -0.1389,
+          "slope": -0.3969,
+          "angle_deg": -21.65
+        },
+        {
+          "line": "top",
+          "from": "short tail closeout",
+          "to": "tail close",
+          "dx_m": 0.4,
+          "value_change_m": -0.1322,
+          "slope": -0.3305,
+          "angle_deg": -18.29
+        }
+      ],
+      "curvature": [
+        {
+          "line": "top",
+          "station": "nose lower rise",
+          "curvature_1_per_m": 0.5212,
+          "radius_of_curvature_m": 1.919
+        },
+        {
+          "line": "top",
+          "station": "engine bay start",
+          "curvature_1_per_m": 0.8525,
+          "radius_of_curvature_m": 1.173
+        },
+        {
+          "line": "top",
+          "station": "engine bay center",
+          "curvature_1_per_m": 0.0094,
+          "radius_of_curvature_m": 106.85
+        },
+        {
+          "line": "top",
+          "station": "engine bay end",
+          "curvature_1_per_m": 0.8278,
+          "radius_of_curvature_m": 1.208
+        },
+        {
+          "line": "top",
+          "station": "cockpit rise",
+          "curvature_1_per_m": 0.039,
+          "radius_of_curvature_m": 25.617
+        },
+        {
+          "line": "top",
+          "station": "cg cockpit",
+          "curvature_1_per_m": 0.784,
+          "radius_of_curvature_m": 1.276
+        },
+        {
+          "line": "top",
+          "station": "high wing saddle",
+          "curvature_1_per_m": 0.584,
+          "radius_of_curvature_m": 1.712
+        },
+        {
+          "line": "top",
+          "station": "aft cabin recovery",
+          "curvature_1_per_m": 0.0877,
+          "radius_of_curvature_m": 11.408
+        },
+        {
+          "line": "top",
+          "station": "tail wake fairing forward",
+          "curvature_1_per_m": 0.0187,
+          "radius_of_curvature_m": 53.415
+        },
+        {
+          "line": "top",
+          "station": "tail wake fairing mid",
+          "curvature_1_per_m": 0.1226,
+          "radius_of_curvature_m": 8.159
+        },
+        {
+          "line": "top",
+          "station": "stabilizer pedestal",
+          "curvature_1_per_m": 0.7831,
+          "radius_of_curvature_m": 1.277
+        },
+        {
+          "line": "top",
+          "station": "short tail closeout",
+          "curvature_1_per_m": 0.1469,
+          "radius_of_curvature_m": 6.809
+        }
+      ]
+    },
+    "bottom": {
+      "segments": [
+        {
+          "line": "bottom",
+          "from": "nose close",
+          "to": "nose lower rise",
+          "dx_m": 0.55,
+          "value_change_m": -0.12,
+          "slope": -0.2182,
+          "angle_deg": -12.31
+        },
+        {
+          "line": "bottom",
+          "from": "nose lower rise",
+          "to": "engine bay start",
+          "dx_m": 0.4,
+          "value_change_m": -0.01,
+          "slope": -0.025,
+          "angle_deg": -1.43
+        },
+        {
+          "line": "bottom",
+          "from": "engine bay start",
+          "to": "engine bay center",
+          "dx_m": 0.4,
+          "value_change_m": 0.04,
+          "slope": 0.1,
+          "angle_deg": 5.71
+        },
+        {
+          "line": "bottom",
+          "from": "engine bay center",
+          "to": "engine bay end",
+          "dx_m": 0.4,
+          "value_change_m": 0.04,
+          "slope": 0.1,
+          "angle_deg": 5.71
+        },
+        {
+          "line": "bottom",
+          "from": "engine bay end",
+          "to": "cockpit rise",
+          "dx_m": 0.4,
+          "value_change_m": -0.0899,
+          "slope": -0.2248,
+          "angle_deg": -12.67
+        },
+        {
+          "line": "bottom",
+          "from": "cockpit rise",
+          "to": "cg cockpit",
+          "dx_m": 0.5,
+          "value_change_m": -0.0401,
+          "slope": -0.0802,
+          "angle_deg": -4.59
+        },
+        {
+          "line": "bottom",
+          "from": "cg cockpit",
+          "to": "high wing saddle",
+          "dx_m": 0.4,
+          "value_change_m": 0.11,
+          "slope": 0.275,
+          "angle_deg": 15.38
+        },
+        {
+          "line": "bottom",
+          "from": "high wing saddle",
+          "to": "aft cabin recovery",
+          "dx_m": 0.5,
+          "value_change_m": 0.2077,
+          "slope": 0.4154,
+          "angle_deg": 22.56
+        },
+        {
+          "line": "bottom",
+          "from": "aft cabin recovery",
+          "to": "tail wake fairing forward",
+          "dx_m": 0.5,
+          "value_change_m": 0.1977,
+          "slope": 0.3954,
+          "angle_deg": 21.57
+        },
+        {
+          "line": "bottom",
+          "from": "tail wake fairing forward",
+          "to": "tail wake fairing mid",
+          "dx_m": 0.4,
+          "value_change_m": 0.1446,
+          "slope": 0.3615,
+          "angle_deg": 19.87
+        },
+        {
+          "line": "bottom",
+          "from": "tail wake fairing mid",
+          "to": "stabilizer pedestal",
+          "dx_m": 0.4,
+          "value_change_m": 0.1244,
+          "slope": 0.311,
+          "angle_deg": 17.28
+        },
+        {
+          "line": "bottom",
+          "from": "stabilizer pedestal",
+          "to": "short tail closeout",
+          "dx_m": 0.35,
+          "value_change_m": 0.1212,
+          "slope": 0.3463,
+          "angle_deg": 19.1
+        },
+        {
+          "line": "bottom",
+          "from": "short tail closeout",
+          "to": "tail close",
+          "dx_m": 0.4,
+          "value_change_m": 0.0344,
+          "slope": 0.086,
+          "angle_deg": 4.92
+        }
+      ],
+      "curvature": [
+        {
+          "line": "bottom",
+          "station": "nose lower rise",
+          "curvature_1_per_m": 0.3936,
+          "radius_of_curvature_m": 2.541
+        },
+        {
+          "line": "bottom",
+          "station": "engine bay start",
+          "curvature_1_per_m": 0.3106,
+          "radius_of_curvature_m": 3.219
+        },
+        {
+          "line": "bottom",
+          "station": "engine bay center",
+          "curvature_1_per_m": 0.0,
+          "radius_of_curvature_m": 2340516979887302.5
+        },
+        {
+          "line": "bottom",
+          "station": "engine bay end",
+          "curvature_1_per_m": 0.7867,
+          "radius_of_curvature_m": 1.271
+        },
+        {
+          "line": "bottom",
+          "station": "cockpit rise",
+          "curvature_1_per_m": 0.3092,
+          "radius_of_curvature_m": 3.234
+        },
+        {
+          "line": "bottom",
+          "station": "cg cockpit",
+          "curvature_1_per_m": 0.7564,
+          "radius_of_curvature_m": 1.322
+        },
+        {
+          "line": "bottom",
+          "station": "high wing saddle",
+          "curvature_1_per_m": 0.262,
+          "radius_of_curvature_m": 3.817
+        },
+        {
+          "line": "bottom",
+          "station": "aft cabin recovery",
+          "curvature_1_per_m": 0.0318,
+          "radius_of_curvature_m": 31.412
+        },
+        {
+          "line": "bottom",
+          "station": "tail wake fairing forward",
+          "curvature_1_per_m": 0.0616,
+          "radius_of_curvature_m": 16.239
+        },
+        {
+          "line": "bottom",
+          "station": "tail wake fairing mid",
+          "curvature_1_per_m": 0.1075,
+          "radius_of_curvature_m": 9.306
+        },
+        {
+          "line": "bottom",
+          "station": "stabilizer pedestal",
+          "curvature_1_per_m": 0.0807,
+          "radius_of_curvature_m": 12.393
+        },
+        {
+          "line": "bottom",
+          "station": "short tail closeout",
+          "curvature_1_per_m": 0.6398,
+          "radius_of_curvature_m": 1.563
+        }
+      ]
+    },
+    "side_half_width": {
+      "segments": [
+        {
+          "line": "side_half_width",
+          "from": "nose close",
+          "to": "nose lower rise",
+          "dx_m": 0.55,
+          "value_change_m": 0.14,
+          "slope": 0.2545,
+          "angle_deg": 14.28
+        },
+        {
+          "line": "side_half_width",
+          "from": "nose lower rise",
+          "to": "engine bay start",
+          "dx_m": 0.4,
+          "value_change_m": 0.15,
+          "slope": 0.375,
+          "angle_deg": 20.56
+        },
+        {
+          "line": "side_half_width",
+          "from": "engine bay start",
+          "to": "engine bay center",
+          "dx_m": 0.4,
+          "value_change_m": 0.0077,
+          "slope": 0.0194,
+          "angle_deg": 1.11
+        },
+        {
+          "line": "side_half_width",
+          "from": "engine bay center",
+          "to": "engine bay end",
+          "dx_m": 0.4,
+          "value_change_m": 0.0023,
+          "slope": 0.0056,
+          "angle_deg": 0.32
+        },
+        {
+          "line": "side_half_width",
+          "from": "engine bay end",
+          "to": "cockpit rise",
+          "dx_m": 0.4,
+          "value_change_m": 0.1318,
+          "slope": 0.3295,
+          "angle_deg": 18.24
+        },
+        {
+          "line": "side_half_width",
+          "from": "cockpit rise",
+          "to": "cg cockpit",
+          "dx_m": 0.5,
+          "value_change_m": 0.0782,
+          "slope": 0.1564,
+          "angle_deg": 8.89
+        },
+        {
+          "line": "side_half_width",
+          "from": "cg cockpit",
+          "to": "high wing saddle",
+          "dx_m": 0.4,
+          "value_change_m": -0.05,
+          "slope": -0.125,
+          "angle_deg": -7.13
+        },
+        {
+          "line": "side_half_width",
+          "from": "high wing saddle",
+          "to": "aft cabin recovery",
+          "dx_m": 0.5,
+          "value_change_m": -0.0914,
+          "slope": -0.1828,
+          "angle_deg": -10.36
+        },
+        {
+          "line": "side_half_width",
+          "from": "aft cabin recovery",
+          "to": "tail wake fairing forward",
+          "dx_m": 0.5,
+          "value_change_m": -0.0952,
+          "slope": -0.1904,
+          "angle_deg": -10.78
+        },
+        {
+          "line": "side_half_width",
+          "from": "tail wake fairing forward",
+          "to": "tail wake fairing mid",
+          "dx_m": 0.4,
+          "value_change_m": -0.0734,
+          "slope": -0.1835,
+          "angle_deg": -10.4
+        },
+        {
+          "line": "side_half_width",
+          "from": "tail wake fairing mid",
+          "to": "stabilizer pedestal",
+          "dx_m": 0.4,
+          "value_change_m": -0.061,
+          "slope": -0.1524,
+          "angle_deg": -8.66
+        },
+        {
+          "line": "side_half_width",
+          "from": "stabilizer pedestal",
+          "to": "short tail closeout",
+          "dx_m": 0.35,
+          "value_change_m": -0.0803,
+          "slope": -0.2296,
+          "angle_deg": -12.93
+        },
+        {
+          "line": "side_half_width",
+          "from": "short tail closeout",
+          "to": "tail close",
+          "dx_m": 0.4,
+          "value_change_m": -0.0387,
+          "slope": -0.0968,
+          "angle_deg": -5.53
+        }
+      ],
+      "curvature": [
+        {
+          "line": "side_half_width",
+          "station": "nose lower rise",
+          "curvature_1_per_m": 0.2201,
+          "radius_of_curvature_m": 4.544
+        },
+        {
+          "line": "side_half_width",
+          "station": "engine bay start",
+          "curvature_1_per_m": 0.8166,
+          "radius_of_curvature_m": 1.225
+        },
+        {
+          "line": "side_half_width",
+          "station": "engine bay center",
+          "curvature_1_per_m": 0.0344,
+          "radius_of_curvature_m": 29.099
+        },
+        {
+          "line": "side_half_width",
+          "station": "engine bay end",
+          "curvature_1_per_m": 0.7584,
+          "radius_of_curvature_m": 1.319
+        },
+        {
+          "line": "side_half_width",
+          "station": "cockpit rise",
+          "curvature_1_per_m": 0.3515,
+          "radius_of_curvature_m": 2.845
+        },
+        {
+          "line": "side_half_width",
+          "station": "cg cockpit",
+          "curvature_1_per_m": 0.6128,
+          "radius_of_curvature_m": 1.632
+        },
+        {
+          "line": "side_half_width",
+          "station": "high wing saddle",
+          "curvature_1_per_m": 0.1239,
+          "radius_of_curvature_m": 8.074
+        },
+        {
+          "line": "side_half_width",
+          "station": "aft cabin recovery",
+          "curvature_1_per_m": 0.0144,
+          "radius_of_curvature_m": 69.256
+        },
+        {
+          "line": "side_half_width",
+          "station": "tail wake fairing forward",
+          "curvature_1_per_m": 0.0146,
+          "radius_of_curvature_m": 68.672
+        },
+        {
+          "line": "side_half_width",
+          "station": "tail wake fairing mid",
+          "curvature_1_per_m": 0.0746,
+          "radius_of_curvature_m": 13.402
+        },
+        {
+          "line": "side_half_width",
+          "station": "stabilizer pedestal",
+          "curvature_1_per_m": 0.1949,
+          "radius_of_curvature_m": 5.13
+        },
+        {
+          "line": "side_half_width",
+          "station": "short tail closeout",
+          "curvature_1_per_m": 0.3394,
+          "radius_of_curvature_m": 2.947
+        }
+      ]
+    }
+  }
+}

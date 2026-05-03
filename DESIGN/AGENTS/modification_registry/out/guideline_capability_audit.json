@@ -1,0 +1,1058 @@
+{
+  "source": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\DESIGN_GUIDELINES.md",
+  "summary": {
+    "features_total": 63,
+    "memory_docs_present": 63,
+    "memory_docs_missing": [],
+    "dedicated_tools_present": 0,
+    "dedicated_tools_missing": [
+      "fuselage_length",
+      "fuselage_max_diameter",
+      "fuselage_fineness_ratio",
+      "nose_shape",
+      "tail_cone_taper",
+      "cabin_cross_section_shape",
+      "cockpit_position",
+      "engine_placement",
+      "payload_location",
+      "surface_smoothness",
+      "canopy_shape",
+      "belly_contour",
+      "fuselage_camber",
+      "wingspan",
+      "wing_area",
+      "aspect_ratio",
+      "taper_ratio",
+      "wing_sweep",
+      "wing_dihedral",
+      "wing_anhedral",
+      "wing_vertical_placement",
+      "wing_longitudinal_placement",
+      "wing_thickness_chord_ratio",
+      "wing_root_chord",
+      "wing_tip_chord",
+      "wing_planform_shape",
+      "wing_leading_edge_shape",
+      "wing_trailing_edge_shape",
+      "standard_wing_configuration",
+      "tandem_wing",
+      "canard_configuration",
+      "wing_height",
+      "airfoil_root",
+      "airfoil_tip",
+      "airfoil_camber_distribution",
+      "airfoil_thickness_distribution",
+      "wing_twist",
+      "wing_incidence",
+      "spanwise_lift_distribution",
+      "leading_edge_radius",
+      "winglet_add",
+      "winglet_height",
+      "winglet_cant_angle",
+      "winglet_toe_angle",
+      "winglet_airfoil",
+      "winglet_sweep",
+      "raked_wingtip",
+      "tip_fences",
+      "split_winglets",
+      "endplate_size",
+      "wingtip_vortex_control_devices",
+      "horizontal_tail_area",
+      "vertical_tail_area",
+      "tail_moment_arm_length",
+      "tail_airfoil_selection",
+      "tail_incidence_angle",
+      "t_tail_vs_conventional_tail",
+      "v_tail_configuration",
+      "twin_tail_vs_single_tail",
+      "canard_configuration_presence_size",
+      "tail_dihedral_anhedral",
+      "propeller_diameter",
+      "thrust_line_relative_to_cg"
+    ],
+    "status_counts": {
+      "implemented": 24,
+      "needs_geometry_tool": 17,
+      "partial": 11,
+      "needs_mass_cg_tool": 2,
+      "needs_architecture_tool": 6,
+      "needs_airfoil_tool_extension": 1,
+      "needs_generator_parameter": 2
+    }
+  },
+  "features": [
+    {
+      "feature": "Fuselage length",
+      "slug": "fuselage_length",
+      "status": "implemented",
+      "implementation_method": "baseline_generator override",
+      "parameters": [
+        "fuse_length"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier",
+        "EVALUATION/AGENTS/fuselage_smoothness"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\fuselage_length.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\fuselage_length"
+    },
+    {
+      "feature": "Maximum fuselage diameter",
+      "slug": "fuselage_max_diameter",
+      "status": "implemented",
+      "implementation_method": "baseline_generator override",
+      "parameters": [
+        "fuse_max_width",
+        "fuse_max_height",
+        "boom_diameter"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier",
+        "EVALUATION/AGENTS/fuselage_smoothness"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\fuselage_max_diameter.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\fuselage_max_diameter"
+    },
+    {
+      "feature": "Fuselage fineness ratio",
+      "slug": "fuselage_fineness_ratio",
+      "status": "implemented",
+      "implementation_method": "derived by changing length and diameter parameters",
+      "parameters": [
+        "fuse_length",
+        "fuse_max_width",
+        "fuse_max_height",
+        "boom_length",
+        "boom_diameter"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/parameter_modifier",
+        "EVALUATION/AGENTS/fuselage_smoothness"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\fuselage_fineness_ratio.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\fuselage_fineness_ratio"
+    },
+    {
+      "feature": "Nose shape (blunt \u2192 sharp)",
+      "slug": "nose_shape",
+      "status": "needs_geometry_tool",
+      "implementation_method": "requires OpenVSP fuselage section insertion/profile control",
+      "parameters": [],
+      "tools": [
+        "EVALUATION/AGENTS/fuselage_smoothness"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\nose_shape.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\nose_shape"
+    },
+    {
+      "feature": "Tail cone taper angle",
+      "slug": "tail_cone_taper",
+      "status": "implemented",
+      "implementation_method": "baseline_generator pod taper override",
+      "parameters": [
+        "fuse_taper_width",
+        "fuse_taper_height",
+        "boom_x",
+        "boom_length"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier",
+        "EVALUATION/AGENTS/fuselage_smoothness"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\tail_cone_taper.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\tail_cone_taper"
+    },
+    {
+      "feature": "Cabin cross-sectional shape (circular, oval, rectangular)",
+      "slug": "cabin_cross_section_shape",
+      "status": "partial",
+      "implementation_method": "width/height available; circular/oval/rectangular profiles need section-shape tool",
+      "parameters": [
+        "fuse_max_width",
+        "fuse_max_height"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\cabin_cross_section_shape.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\cabin_cross_section_shape"
+    },
+    {
+      "feature": "Cockpit position (forward vs aft shift)",
+      "slug": "cockpit_position",
+      "status": "needs_mass_cg_tool",
+      "implementation_method": "requires cockpit station and CG/mass model",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\cockpit_position.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\cockpit_position"
+    },
+    {
+      "feature": "Engine placement (nose, wing-mounted, aft fuselage)",
+      "slug": "engine_placement",
+      "status": "partial",
+      "implementation_method": "tractor nose prop exists; wing/aft engine placement needs architecture generator",
+      "parameters": [
+        "prop_x"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\engine_placement.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\engine_placement"
+    },
+    {
+      "feature": "Payload location (CG distribution tuning)",
+      "slug": "payload_location",
+      "status": "needs_mass_cg_tool",
+      "implementation_method": "requires payload mass station and CG calculator",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\payload_location.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\payload_location"
+    },
+    {
+      "feature": "Surface smoothness / roughness factor",
+      "slug": "surface_smoothness",
+      "status": "partial",
+      "implementation_method": "fuselage profile smoothness exists; roughness factor needs drag model input",
+      "parameters": [],
+      "tools": [
+        "EVALUATION/AGENTS/fuselage_smoothness"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\surface_smoothness.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\surface_smoothness"
+    },
+    {
+      "feature": "Canopy shape and angle",
+      "slug": "canopy_shape",
+      "status": "needs_geometry_tool",
+      "implementation_method": "requires canopy/fuselage upper-profile section controls",
+      "parameters": [],
+      "tools": [
+        "EVALUATION/AGENTS/fuselage_smoothness"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\canopy_shape.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\canopy_shape"
+    },
+    {
+      "feature": "Belly contour (flat vs curved)",
+      "slug": "belly_contour",
+      "status": "needs_geometry_tool",
+      "implementation_method": "requires lower-profile section controls",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\belly_contour.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\belly_contour"
+    },
+    {
+      "feature": "Fuselage camber (lifting fuselage concept)",
+      "slug": "fuselage_camber",
+      "status": "needs_geometry_tool",
+      "implementation_method": "requires vertical section-centerline offsets",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\fuselage_camber.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\fuselage_camber"
+    },
+    {
+      "feature": "Wingspan",
+      "slug": "wingspan",
+      "status": "implemented",
+      "implementation_method": "baseline_generator override",
+      "parameters": [
+        "wing_span"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\wingspan.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\wingspan"
+    },
+    {
+      "feature": "Wing area",
+      "slug": "wing_area",
+      "status": "implemented",
+      "implementation_method": "derived from span and root/tip chords",
+      "parameters": [
+        "wing_span",
+        "wing_root_chord",
+        "wing_tip_chord"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\wing_area.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\wing_area"
+    },
+    {
+      "feature": "Aspect ratio",
+      "slug": "aspect_ratio",
+      "status": "implemented",
+      "implementation_method": "derived from span and area",
+      "parameters": [
+        "wing_span",
+        "wing_root_chord",
+        "wing_tip_chord"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\aspect_ratio.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\aspect_ratio"
+    },
+    {
+      "feature": "Taper ratio",
+      "slug": "taper_ratio",
+      "status": "implemented",
+      "implementation_method": "derived from tip/root chord",
+      "parameters": [
+        "wing_root_chord",
+        "wing_tip_chord"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\taper_ratio.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\taper_ratio"
+    },
+    {
+      "feature": "Wing sweep angle",
+      "slug": "wing_sweep",
+      "status": "implemented",
+      "implementation_method": "baseline_generator override",
+      "parameters": [
+        "wing_sweep"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\wing_sweep.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\wing_sweep"
+    },
+    {
+      "feature": "Wing dihedral angle",
+      "slug": "wing_dihedral",
+      "status": "implemented",
+      "implementation_method": "baseline_generator override",
+      "parameters": [
+        "wing_dihedral"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier",
+        "SIMULATION/AGENTS/beta_sweep"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\wing_dihedral.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\wing_dihedral"
+    },
+    {
+      "feature": "Wing anhedral angle",
+      "slug": "wing_anhedral",
+      "status": "implemented",
+      "implementation_method": "negative wing_dihedral override",
+      "parameters": [
+        "wing_dihedral"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier",
+        "SIMULATION/AGENTS/beta_sweep"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\wing_anhedral.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\wing_anhedral"
+    },
+    {
+      "feature": "Wing vertical placement (high, mid, low)",
+      "slug": "wing_vertical_placement",
+      "status": "implemented",
+      "implementation_method": "baseline_generator override",
+      "parameters": [
+        "wing_z"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\wing_vertical_placement.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\wing_vertical_placement"
+    },
+    {
+      "feature": "Wing longitudinal placement (relative to CG)",
+      "slug": "wing_longitudinal_placement",
+      "status": "implemented",
+      "implementation_method": "baseline_generator override",
+      "parameters": [
+        "wing_x"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\wing_longitudinal_placement.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\wing_longitudinal_placement"
+    },
+    {
+      "feature": "Wing thickness-to-chord ratio",
+      "slug": "wing_thickness_chord_ratio",
+      "status": "implemented",
+      "implementation_method": "NACA airfoil thickness selection",
+      "parameters": [
+        "wing_airfoil"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/airfoil_tool",
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\wing_thickness_chord_ratio.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\wing_thickness_chord_ratio"
+    },
+    {
+      "feature": "Wing root chord",
+      "slug": "wing_root_chord",
+      "status": "implemented",
+      "implementation_method": "baseline_generator override",
+      "parameters": [
+        "wing_root_chord"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\wing_root_chord.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\wing_root_chord"
+    },
+    {
+      "feature": "Wing tip chord",
+      "slug": "wing_tip_chord",
+      "status": "implemented",
+      "implementation_method": "baseline_generator override",
+      "parameters": [
+        "wing_tip_chord"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\wing_tip_chord.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\wing_tip_chord"
+    },
+    {
+      "feature": "Wing planform shape (elliptical, rectangular, trapezoidal)",
+      "slug": "wing_planform_shape",
+      "status": "partial",
+      "implementation_method": "trapezoid available; elliptical/rectangular need planform generator mode",
+      "parameters": [
+        "wing_root_chord",
+        "wing_tip_chord",
+        "wing_sweep"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\wing_planform_shape.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\wing_planform_shape"
+    },
+    {
+      "feature": "Wing leading-edge shape",
+      "slug": "wing_leading_edge_shape",
+      "status": "needs_geometry_tool",
+      "implementation_method": "requires per-section sweep or custom wing outline",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\wing_leading_edge_shape.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\wing_leading_edge_shape"
+    },
+    {
+      "feature": "Wing trailing-edge shape",
+      "slug": "wing_trailing_edge_shape",
+      "status": "needs_geometry_tool",
+      "implementation_method": "requires per-section chord/sweep outline tool",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\wing_trailing_edge_shape.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\wing_trailing_edge_shape"
+    },
+    {
+      "feature": "Standard wing configuration (forward wing, trailing empenage)",
+      "slug": "standard_wing_configuration",
+      "status": "implemented",
+      "implementation_method": "baseline_generator pod-and-boom tractor with aft tail",
+      "parameters": [],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\standard_wing_configuration.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\standard_wing_configuration"
+    },
+    {
+      "feature": "Tandem Wing",
+      "slug": "tandem_wing",
+      "status": "needs_architecture_tool",
+      "implementation_method": "requires alternate generator architecture",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\tandem_wing.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\tandem_wing"
+    },
+    {
+      "feature": "Canard configuration",
+      "slug": "canard_configuration",
+      "status": "needs_architecture_tool",
+      "implementation_method": "requires canard generator and canard-first stall checks",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\canard_configuration.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\canard_configuration"
+    },
+    {
+      "feature": "Wing height",
+      "slug": "wing_height",
+      "status": "implemented",
+      "implementation_method": "same as wing vertical placement",
+      "parameters": [
+        "wing_z"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\wing_height.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\wing_height"
+    },
+    {
+      "feature": "Airfoil selection (root)",
+      "slug": "airfoil_root",
+      "status": "partial",
+      "implementation_method": "global wing NACA tool exists; root-only section selection still needed",
+      "parameters": [
+        "wing_airfoil"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/airfoil_tool",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\airfoil_root.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\airfoil_root"
+    },
+    {
+      "feature": "Airfoil selection (tip)",
+      "slug": "airfoil_tip",
+      "status": "partial",
+      "implementation_method": "global wing NACA tool exists; tip-only section selection still needed",
+      "parameters": [
+        "wing_airfoil"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/airfoil_tool",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\airfoil_tip.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\airfoil_tip"
+    },
+    {
+      "feature": "Airfoil camber distribution",
+      "slug": "airfoil_camber_distribution",
+      "status": "partial",
+      "implementation_method": "NACA camber can be changed globally; spanwise distribution needs per-XSec tool",
+      "parameters": [
+        "wing_airfoil"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/airfoil_tool",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\airfoil_camber_distribution.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\airfoil_camber_distribution"
+    },
+    {
+      "feature": "Airfoil thickness distribution",
+      "slug": "airfoil_thickness_distribution",
+      "status": "partial",
+      "implementation_method": "NACA thickness can be changed globally; spanwise distribution needs per-XSec tool",
+      "parameters": [
+        "wing_airfoil"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/airfoil_tool",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\airfoil_thickness_distribution.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\airfoil_thickness_distribution"
+    },
+    {
+      "feature": "Twist (washout/washin)",
+      "slug": "wing_twist",
+      "status": "implemented",
+      "implementation_method": "baseline_generator override",
+      "parameters": [
+        "wing_twist"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\wing_twist.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\wing_twist"
+    },
+    {
+      "feature": "Wing incidence angle",
+      "slug": "wing_incidence",
+      "status": "implemented",
+      "implementation_method": "baseline_generator override",
+      "parameters": [
+        "wing_incidence_deg"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\wing_incidence.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\wing_incidence"
+    },
+    {
+      "feature": "Spanwise lift distribution",
+      "slug": "spanwise_lift_distribution",
+      "status": "partial",
+      "implementation_method": "changed by span/chord/twist; needs dedicated load-distribution evaluator",
+      "parameters": [
+        "wing_span",
+        "wing_root_chord",
+        "wing_tip_chord",
+        "wing_twist"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/parameter_modifier",
+        "SIMULATION/AGENTS/alpha_sweep"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\spanwise_lift_distribution.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\spanwise_lift_distribution"
+    },
+    {
+      "feature": "Leading-edge radius",
+      "slug": "leading_edge_radius",
+      "status": "partial",
+      "implementation_method": "controlled indirectly by airfoil thickness; direct leading-edge shaping needed",
+      "parameters": [
+        "wing_airfoil"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/airfoil_tool",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\leading_edge_radius.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\leading_edge_radius"
+    },
+    {
+      "feature": "Add winglets",
+      "slug": "winglet_add",
+      "status": "needs_geometry_tool",
+      "implementation_method": "requires winglet geometry generator",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\winglet_add.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\winglet_add"
+    },
+    {
+      "feature": "Winglet height",
+      "slug": "winglet_height",
+      "status": "needs_geometry_tool",
+      "implementation_method": "requires winglet geometry generator",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\winglet_height.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\winglet_height"
+    },
+    {
+      "feature": "Winglet cant angle",
+      "slug": "winglet_cant_angle",
+      "status": "needs_geometry_tool",
+      "implementation_method": "requires winglet geometry generator",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\winglet_cant_angle.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\winglet_cant_angle"
+    },
+    {
+      "feature": "Winglet toe angle",
+      "slug": "winglet_toe_angle",
+      "status": "needs_geometry_tool",
+      "implementation_method": "requires winglet geometry generator",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\winglet_toe_angle.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\winglet_toe_angle"
+    },
+    {
+      "feature": "Winglet airfoil",
+      "slug": "winglet_airfoil",
+      "status": "needs_geometry_tool",
+      "implementation_method": "requires winglet geometry and airfoil assignment",
+      "parameters": [],
+      "tools": [
+        "DESIGN/AGENTS/airfoil_tool"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\winglet_airfoil.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\winglet_airfoil"
+    },
+    {
+      "feature": "Winglet sweep",
+      "slug": "winglet_sweep",
+      "status": "needs_geometry_tool",
+      "implementation_method": "requires winglet geometry generator",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\winglet_sweep.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\winglet_sweep"
+    },
+    {
+      "feature": "Raked wingtip length",
+      "slug": "raked_wingtip",
+      "status": "needs_geometry_tool",
+      "implementation_method": "requires multi-section wing tip generator",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\raked_wingtip.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\raked_wingtip"
+    },
+    {
+      "feature": "Tip fences",
+      "slug": "tip_fences",
+      "status": "needs_geometry_tool",
+      "implementation_method": "requires wingtip endplate/fence geometry generator",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\tip_fences.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\tip_fences"
+    },
+    {
+      "feature": "Split winglets (upper/lower)",
+      "slug": "split_winglets",
+      "status": "needs_geometry_tool",
+      "implementation_method": "requires upper/lower winglet geometry generator",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\split_winglets.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\split_winglets"
+    },
+    {
+      "feature": "Endplate size",
+      "slug": "endplate_size",
+      "status": "needs_geometry_tool",
+      "implementation_method": "requires endplate geometry generator",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\endplate_size.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\endplate_size"
+    },
+    {
+      "feature": "Wingtip vortex control devices",
+      "slug": "wingtip_vortex_control_devices",
+      "status": "needs_geometry_tool",
+      "implementation_method": "requires wingtip device generator and induced-drag evaluation",
+      "parameters": [],
+      "tools": [
+        "SIMULATION/AGENTS/alpha_sweep"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\wingtip_vortex_control_devices.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\wingtip_vortex_control_devices"
+    },
+    {
+      "feature": "Horizontal tail area",
+      "slug": "horizontal_tail_area",
+      "status": "implemented",
+      "implementation_method": "derived from horizontal tail span and chords",
+      "parameters": [
+        "htail_span",
+        "htail_root_chord",
+        "htail_tip_chord"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\horizontal_tail_area.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\horizontal_tail_area"
+    },
+    {
+      "feature": "Vertical tail area",
+      "slug": "vertical_tail_area",
+      "status": "implemented",
+      "implementation_method": "derived from vertical tail height and chords",
+      "parameters": [
+        "vtail_height",
+        "vtail_root_chord",
+        "vtail_tip_chord"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier",
+        "SIMULATION/AGENTS/beta_sweep"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\vertical_tail_area.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\vertical_tail_area"
+    },
+    {
+      "feature": "Tail moment arm length",
+      "slug": "tail_moment_arm_length",
+      "status": "implemented",
+      "implementation_method": "tail x-location and boom length overrides",
+      "parameters": [
+        "htail_x",
+        "vtail_x",
+        "boom_length"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\tail_moment_arm_length.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\tail_moment_arm_length"
+    },
+    {
+      "feature": "Tail airfoil selection",
+      "slug": "tail_airfoil_selection",
+      "status": "needs_airfoil_tool_extension",
+      "implementation_method": "requires airfoil modifier support for HorizTail/VertTail geoms",
+      "parameters": [],
+      "tools": [
+        "DESIGN/AGENTS/airfoil_tool"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\tail_airfoil_selection.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\tail_airfoil_selection"
+    },
+    {
+      "feature": "Tail incidence angle",
+      "slug": "tail_incidence_angle",
+      "status": "needs_generator_parameter",
+      "implementation_method": "requires htail/vtail incidence parameters in baseline generator",
+      "parameters": [],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\tail_incidence_angle.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\tail_incidence_angle"
+    },
+    {
+      "feature": "T-tail vs conventional tail",
+      "slug": "t_tail_vs_conventional_tail",
+      "status": "needs_architecture_tool",
+      "implementation_method": "requires alternate tail attachment/placement generator",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\t_tail_vs_conventional_tail.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\t_tail_vs_conventional_tail"
+    },
+    {
+      "feature": "V-tail configuration",
+      "slug": "v_tail_configuration",
+      "status": "needs_architecture_tool",
+      "implementation_method": "requires V-tail geometry generator and control-axis mapping",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\v_tail_configuration.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\v_tail_configuration"
+    },
+    {
+      "feature": "Twin tail vs single tail",
+      "slug": "twin_tail_vs_single_tail",
+      "status": "needs_architecture_tool",
+      "implementation_method": "requires twin vertical tail generator",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\twin_tail_vs_single_tail.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\twin_tail_vs_single_tail"
+    },
+    {
+      "feature": "Canard configuration (presence/size)",
+      "slug": "canard_configuration_presence_size",
+      "status": "needs_architecture_tool",
+      "implementation_method": "requires canard generator and canard-first stall checks",
+      "parameters": [],
+      "tools": [],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\canard_configuration_presence_size.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\canard_configuration_presence_size"
+    },
+    {
+      "feature": "Tail dihedral/anhedral",
+      "slug": "tail_dihedral_anhedral",
+      "status": "needs_generator_parameter",
+      "implementation_method": "requires horizontal tail dihedral parameter",
+      "parameters": [],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "SIMULATION/AGENTS/beta_sweep"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\tail_dihedral_anhedral.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\tail_dihedral_anhedral"
+    },
+    {
+      "feature": "Propeller diameter",
+      "slug": "propeller_diameter",
+      "status": "implemented",
+      "implementation_method": "baseline_generator prop disk override",
+      "parameters": [
+        "prop_diameter"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\propeller_diameter.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\propeller_diameter"
+    },
+    {
+      "feature": "Thrust line relative to CG",
+      "slug": "thrust_line_relative_to_cg",
+      "status": "partial",
+      "implementation_method": "prop x-position exists; vertical thrust-line and CG model still needed",
+      "parameters": [
+        "prop_x"
+      ],
+      "tools": [
+        "DESIGN/AGENTS/baseline_generator",
+        "DESIGN/AGENTS/parameter_modifier"
+      ],
+      "memory_doc_exists": true,
+      "memory_doc": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modifications\\thrust_line_relative_to_cg.md",
+      "dedicated_tool_exists": false,
+      "dedicated_tool_dir": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\DESIGN\\AGENTS\\modification_tools\\thrust_line_relative_to_cg"
+    }
+  ]
+}

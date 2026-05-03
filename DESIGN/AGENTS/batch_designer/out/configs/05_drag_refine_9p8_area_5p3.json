@@ -1,0 +1,19 @@
+{
+  "fuse_length": 3.92,
+  "fuse_max_width": 0.84,
+  "fuse_max_height": 1.05,
+  "wing_span": 9.8,
+  "wing_root_chord": 0.67,
+  "wing_tip_chord": 0.41,
+  "wing_sweep": 0.5,
+  "wing_dihedral": 3.0,
+  "wing_twist": -2.5,
+  "htail_span": 2.18,
+  "htail_root_chord": 0.34,
+  "htail_tip_chord": 0.22,
+  "htail_x": 3.3,
+  "vtail_height": 0.7,
+  "vtail_root_chord": 0.38,
+  "vtail_tip_chord": 0.19,
+  "vtail_x": 3.12
+}

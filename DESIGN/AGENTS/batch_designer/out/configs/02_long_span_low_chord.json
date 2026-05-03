@@ -1,0 +1,9 @@
+{
+  "wing_span": 11.2,
+  "wing_root_chord": 0.74,
+  "wing_tip_chord": 0.48,
+  "wing_twist": -3.5,
+  "htail_span": 2.8,
+  "htail_root_chord": 0.44,
+  "htail_tip_chord": 0.28
+}

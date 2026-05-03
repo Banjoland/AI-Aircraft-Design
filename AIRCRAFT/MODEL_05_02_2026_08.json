@@ -1,0 +1,445 @@
+{
+  "model_file": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\AIRCRAFT\\MODEL_05_02_2026_08.vsp3",
+  "source_model": "C:\\Users\\asgin\\OneDrive\\Documents\\PROJECTS\\AI AIRPLANE DESIGN\\AIRCRAFT DESIGN 2\\AIRCRAFT\\MODEL_05_02_2026_07.vsp3",
+  "configuration": "single_smooth_full_fuselage",
+  "replaces_configuration": "pod_and_boom",
+  "single_fuselage_structure": true,
+  "removed_separate_tail_boom": true,
+  "wing_area_m2": 4.75,
+  "aspect_ratio": 20.21,
+  "wing_mac_m": 0.494,
+  "htail_area_m2": 0.43,
+  "vtail_area_m2": 0.21,
+  "prop_diameter_m": 1.1,
+  "fuse_length_m": 5.2,
+  "fuse_max_width_m": 1.1,
+  "fuse_max_height_m": 1.5212,
+  "fuselage_stations": [
+    {
+      "label": "nose close",
+      "x_m": 0.0,
+      "width_m": 0.02,
+      "height_m": 0.0,
+      "z_center_m": -0.3,
+      "top_z_m": -0.3,
+      "bottom_z_m": -0.3,
+      "half_width_m": 0.01
+    },
+    {
+      "label": "nose lower rise",
+      "x_m": 0.25,
+      "width_m": 0.4175,
+      "height_m": 0.3542,
+      "z_center_m": -0.2463,
+      "top_z_m": -0.0692,
+      "bottom_z_m": -0.4234,
+      "half_width_m": 0.2087
+    },
+    {
+      "label": "engine bay forward fairing",
+      "x_m": 0.45,
+      "width_m": 0.6103,
+      "height_m": 0.5863,
+      "z_center_m": -0.1368,
+      "top_z_m": 0.1563,
+      "bottom_z_m": -0.43,
+      "half_width_m": 0.3051
+    },
+    {
+      "label": "engine bay start",
+      "x_m": 0.55,
+      "width_m": 0.66,
+      "height_m": 0.68,
+      "z_center_m": -0.09,
+      "top_z_m": 0.25,
+      "bottom_z_m": -0.43,
+      "half_width_m": 0.33
+    },
+    {
+      "label": "engine bay forward",
+      "x_m": 0.75,
+      "width_m": 0.6896,
+      "height_m": 0.7409,
+      "z_center_m": -0.047,
+      "top_z_m": 0.3234,
+      "bottom_z_m": -0.4175,
+      "half_width_m": 0.3448
+    },
+    {
+      "label": "engine bay center",
+      "x_m": 0.95,
+      "width_m": 0.666,
+      "height_m": 0.7215,
+      "z_center_m": -0.0292,
+      "top_z_m": 0.3315,
+      "bottom_z_m": -0.39,
+      "half_width_m": 0.333
+    },
+    {
+      "label": "engine bay aft",
+      "x_m": 1.15,
+      "width_m": 0.6444,
+      "height_m": 0.6988,
+      "z_center_m": -0.0131,
+      "top_z_m": 0.3363,
+      "bottom_z_m": -0.3625,
+      "half_width_m": 0.3222
+    },
+    {
+      "label": "engine bay end",
+      "x_m": 1.35,
+      "width_m": 0.68,
+      "height_m": 0.75,
+      "z_center_m": 0.025,
+      "top_z_m": 0.4,
+      "bottom_z_m": -0.35,
+      "half_width_m": 0.34
+    },
+    {
+      "label": "cockpit rise",
+      "x_m": 1.55,
+      "width_m": 0.8356,
+      "height_m": 0.9798,
+      "z_center_m": 0.0928,
+      "top_z_m": 0.5827,
+      "bottom_z_m": -0.3971,
+      "half_width_m": 0.4178
+    },
+    {
+      "label": "forward cockpit",
+      "x_m": 1.85,
+      "width_m": 1.0424,
+      "height_m": 1.3176,
+      "z_center_m": 0.1866,
+      "top_z_m": 0.8455,
+      "bottom_z_m": -0.4722,
+      "half_width_m": 0.5212
+    },
+    {
+      "label": "cg cockpit forward",
+      "x_m": 2.1,
+      "width_m": 1.0942,
+      "height_m": 1.4472,
+      "z_center_m": 0.2429,
+      "top_z_m": 0.9665,
+      "bottom_z_m": -0.4806,
+      "half_width_m": 0.5471
+    },
+    {
+      "label": "cg cockpit",
+      "x_m": 2.25,
+      "width_m": 1.1,
+      "height_m": 1.5,
+      "z_center_m": 0.27,
+      "top_z_m": 1.02,
+      "bottom_z_m": -0.48,
+      "half_width_m": 0.55
+    },
+    {
+      "label": "aft cockpit crown",
+      "x_m": 2.45,
+      "width_m": 1.0707,
+      "height_m": 1.5212,
+      "z_center_m": 0.313,
+      "top_z_m": 1.0737,
+      "bottom_z_m": -0.4476,
+      "half_width_m": 0.5353
+    },
+    {
+      "label": "high wing saddle",
+      "x_m": 2.7,
+      "width_m": 1.0,
+      "height_m": 1.47,
+      "z_center_m": 0.365,
+      "top_z_m": 1.1,
+      "bottom_z_m": -0.37,
+      "half_width_m": 0.5
+    },
+    {
+      "label": "aft cabin recovery",
+      "x_m": 3.0,
+      "width_m": 0.9217,
+      "height_m": 1.3669,
+      "z_center_m": 0.398,
+      "top_z_m": 1.0814,
+      "bottom_z_m": -0.2855,
+      "half_width_m": 0.4609
+    },
+    {
+      "label": "tail wake fairing forward",
+      "x_m": 3.35,
+      "width_m": 0.8044,
+      "height_m": 1.2053,
+      "z_center_m": 0.4403,
+      "top_z_m": 1.0429,
+      "bottom_z_m": -0.1624,
+      "half_width_m": 0.4022
+    },
+    {
+      "label": "tail wake fairing mid",
+      "x_m": 3.7,
+      "width_m": 0.6586,
+      "height_m": 1.0097,
+      "z_center_m": 0.4924,
+      "top_z_m": 0.9973,
+      "bottom_z_m": -0.0124,
+      "half_width_m": 0.3293
+    },
+    {
+      "label": "tail wake fairing aft",
+      "x_m": 4.05,
+      "width_m": 0.5328,
+      "height_m": 0.8394,
+      "z_center_m": 0.5489,
+      "top_z_m": 0.9686,
+      "bottom_z_m": 0.1292,
+      "half_width_m": 0.2664
+    },
+    {
+      "label": "stabilizer pedestal",
+      "x_m": 4.4,
+      "width_m": 0.4189,
+      "height_m": 0.6788,
+      "z_center_m": 0.6013,
+      "top_z_m": 0.9407,
+      "bottom_z_m": 0.2619,
+      "half_width_m": 0.2094
+    },
+    {
+      "label": "aft stabilizer fairing",
+      "x_m": 4.7,
+      "width_m": 0.2964,
+      "height_m": 0.4835,
+      "z_center_m": 0.6033,
+      "top_z_m": 0.845,
+      "bottom_z_m": 0.3615,
+      "half_width_m": 0.1482
+    },
+    {
+      "label": "short tail closeout",
+      "x_m": 4.95,
+      "width_m": 0.1727,
+      "height_m": 0.2725,
+      "z_center_m": 0.5862,
+      "top_z_m": 0.7224,
+      "bottom_z_m": 0.4499,
+      "half_width_m": 0.0864
+    },
+    {
+      "label": "tail close",
+      "x_m": 5.2,
+      "width_m": 0.02,
+      "height_m": 0.0,
+      "z_center_m": 0.56,
+      "top_z_m": 0.56,
+      "bottom_z_m": 0.56,
+      "half_width_m": 0.01
+    }
+  ],
+  "fuselage_curve_method": "piecewise_cubic_hermite",
+  "fuselage_curve_degree": 3,
+  "fuselage_curve_controls": {
+    "top_curve": [
+      {
+        "x_m": 0.0,
+        "z_m": -0.3
+      },
+      {
+        "x_m": 0.3,
+        "z_m": -0.02
+      },
+      {
+        "x_m": 0.55,
+        "z_m": 0.25
+      },
+      {
+        "x_m": 1.35,
+        "z_m": 0.4
+      },
+      {
+        "x_m": 1.75,
+        "z_m": 0.78
+      },
+      {
+        "x_m": 2.25,
+        "z_m": 1.02
+      },
+      {
+        "x_m": 2.7,
+        "z_m": 1.1
+      },
+      {
+        "x_m": 3.2,
+        "z_m": 1.06
+      },
+      {
+        "x_m": 3.85,
+        "z_m": 0.98
+      },
+      {
+        "x_m": 4.45,
+        "z_m": 0.93
+      },
+      {
+        "x_m": 4.9,
+        "z_m": 0.75
+      },
+      {
+        "x_m": 5.2,
+        "z_m": 0.56
+      }
+    ],
+    "bottom_curve": [
+      {
+        "x_m": 0.0,
+        "z_m": -0.3
+      },
+      {
+        "x_m": 0.3,
+        "z_m": -0.43
+      },
+      {
+        "x_m": 0.55,
+        "z_m": -0.43
+      },
+      {
+        "x_m": 1.35,
+        "z_m": -0.35
+      },
+      {
+        "x_m": 1.75,
+        "z_m": -0.46
+      },
+      {
+        "x_m": 2.25,
+        "z_m": -0.48
+      },
+      {
+        "x_m": 2.7,
+        "z_m": -0.37
+      },
+      {
+        "x_m": 3.2,
+        "z_m": -0.22
+      },
+      {
+        "x_m": 3.85,
+        "z_m": 0.05
+      },
+      {
+        "x_m": 4.45,
+        "z_m": 0.28
+      },
+      {
+        "x_m": 4.9,
+        "z_m": 0.43
+      },
+      {
+        "x_m": 5.2,
+        "z_m": 0.56
+      }
+    ],
+    "side_half_width_curve": [
+      {
+        "x_m": 0.0,
+        "half_width_m": 0.01
+      },
+      {
+        "x_m": 0.3,
+        "half_width_m": 0.24
+      },
+      {
+        "x_m": 0.55,
+        "half_width_m": 0.33
+      },
+      {
+        "x_m": 1.35,
+        "half_width_m": 0.34
+      },
+      {
+        "x_m": 1.75,
+        "half_width_m": 0.5
+      },
+      {
+        "x_m": 2.25,
+        "half_width_m": 0.55
+      },
+      {
+        "x_m": 2.7,
+        "half_width_m": 0.5
+      },
+      {
+        "x_m": 3.2,
+        "half_width_m": 0.43
+      },
+      {
+        "x_m": 3.85,
+        "half_width_m": 0.3
+      },
+      {
+        "x_m": 4.45,
+        "half_width_m": 0.2
+      },
+      {
+        "x_m": 4.9,
+        "half_width_m": 0.1
+      },
+      {
+        "x_m": 5.2,
+        "half_width_m": 0.01
+      }
+    ]
+  },
+  "openvsp_skinning_continuity": "C2",
+  "x_cg_m": 2.25,
+  "pilot_x_m": 2.25,
+  "cockpit_vertical_space_m": 1.5,
+  "cockpit_top_z_m": 1.02,
+  "engine_x_m": 0.95,
+  "engine_z_m": -0.18,
+  "engine_compartment": {
+    "required_length_m": 0.8,
+    "required_width_m": 0.6,
+    "required_height_m": 0.6,
+    "x_start_m": 0.55,
+    "x_end_m": 1.35,
+    "length_m": 0.8,
+    "min_width_m": 0.644,
+    "min_height_m": 0.68,
+    "meets_spec": true
+  },
+  "wing_x_m": 2.25,
+  "wing_z_m": 1.1,
+  "wing_above_cockpit_top_m": 0.08,
+  "wing_high_attached_to_fuselage": true,
+  "htail_x_m": 4.45,
+  "htail_z_m": 0.92,
+  "horizontal_tail_aft_te_m": 4.802,
+  "tail_buffet_design": "horizontal tail placed aft and slightly below high wing root line to sample separated root wake at stall onset",
+  "vtail_x_m": 4.4,
+  "vtail_z_m": 0.5,
+  "vertical_tail_aft_te_m": 4.855,
+  "stabilizer_aftmost_te_m": 4.855,
+  "fuselage_extension_past_stabilizer_te_m": 0.345,
+  "mtow_kg": 218.0,
+  "vstall_est_ms": 20.79,
+  "vstall_limit_ms": 21.0,
+  "vstall_margin_ok": true,
+  "wingspan_m": 9.8,
+  "wingspan_limit_m": 15.0,
+  "wingspan_ok": true,
+  "total_wetted_area_m2": 24.17,
+  "fuselage_wetted_area_m2": 12.97,
+  "empty_mass_est_kg": 193.0,
+  "empty_mass_spec_kg": 110.0,
+  "empty_mass_ok": false,
+  "wing_airfoil": "NACA4412",
+  "notes": [
+    "Single fuselage body replaces CockpitPod plus TailBoom.",
+    "Cockpit station is centered on x_cg_m and provides 1.5 m vertical interior envelope by geometry.",
+    "Fuselage top, bottom, and side stations are sampled from cubic Hermite curves with C2 skinning continuity set in OpenVSP.",
+    "Engine compartment meets the 0.8 m by 0.6 m by 0.6 m specification envelope.",
+    "Engine/prop line is below cockpit centerline.",
+    "Wing is mounted at the fuselage crown, above cockpit top, while still intersecting the upper fuselage."
+  ]
+}

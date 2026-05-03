@@ -1,0 +1,24 @@
+{
+  "model": "MODEL_05_01_2026_20.vsp3",
+  "sim_file": "MODEL_05_01_2026_20_alpha_sweep.json",
+  "stall_cost": 0.0,
+  "stall_note": "V_stall 17.00 <= 21.0 m/s - no penalty",
+  "stability_cost": 0.0515,
+  "stability_note": "Cm_alpha = -0.33909/deg -> 19.4284/rad; stability cost = 0.0515",
+  "cruise_reward": 0.7044,
+  "cruise_note": "V_cruise 47.87 m/s vs ref 54.2 m/s - reward 0.7044",
+  "mass_cost": 217706.8033,
+  "mass_note": "empty_mass=245.2 kg vs spec 110 kg - cost 217706.8033",
+  "total_cost": 217706.1504,
+  "inputs": {
+    "vstall_ms": 17.0,
+    "vstall_spec_ms": 21.0,
+    "vcruise_ms": 47.87,
+    "vcruise_ref_ms": 54.2,
+    "cm_alpha_per_deg": -0.33909,
+    "longitudinal_stable": true,
+    "empty_mass_kg": 245.2,
+    "empty_mass_spec_kg": 110.0
+  },
+  "summary": "total=217706.15  (stall=0.00  stability=0.05  mass=217706.80  cruise_reward=0.70)"
+}

@@ -1,0 +1,14 @@
+{
+  "model_file": "TEST_SMOOTH_POD.vsp3",
+  "configuration": "pod_and_boom",
+  "fuse_length_m": 2.2,
+  "fuse_max_width_m": 0.9,
+  "fuse_max_height_m": 0.7,
+  "fuse_taper_width_m": 0.35,
+  "fuse_taper_height_m": 0.3,
+  "boom_x_m": 2.2,
+  "boom_length_m": 2.0,
+  "boom_diameter_m": 0.18,
+  "wing_area_m2": 5.0,
+  "empty_mass_est_kg": 140.0
+}
