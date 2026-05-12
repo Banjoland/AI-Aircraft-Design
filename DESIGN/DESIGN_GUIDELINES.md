@@ -20,6 +20,18 @@ A weakness that AI has with aircraft design is creating smooth, slim, low drag f
 
 
 Finally, you must develop the tools to be able to perform each and every one of the following modifications.  Each tool should have its own directory.  Each modification should have its own tool.  For each tool you MUST design a document (skill.md?) that allows you to record how using the tool to make a modification to the design improved or worsened the performance of the aircraft.  You should maintain a memory of design decision impacts.  
+
+## Optimization
+
+the following should be optimization targets: 
+- reduced weight, 
+- increased cruise speed, 
+- decreased stall speed, 
+- increased stability, 
+- decreased coupling of instability modes, 
+- reduced curvature of fuselage (i.e. less sharp transitions in section crosssections)
+
+You should feel free to optimize any other parameter you require in order to meet the design specification.
  
 
 ## Features That Can Be modified

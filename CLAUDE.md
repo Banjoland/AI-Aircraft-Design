@@ -56,3 +56,11 @@ When the word "Skills" is used in this project, I mean formal agent skills as de
 ## tools
 
 When the word "tools" is used in this project, I mean python programs and (optionally) sub-agents that can run those programs.
+
+## Architecture Constraint: No Pod-and-Boom
+
+The pod-and-boom configuration (separate cockpit pod + tail boom with no structural fuselage) is **permanently retired**. Do not generate, suggest, or iterate on pod-and-boom designs.
+
+**Why:** Analysis confirmed this architecture is a local optimum that cannot be escaped. The cockpit pod has fineness ratio ≈ 1.78 (FF=2.86), making it inherently blunt. Shortening it to reduce mass makes it even blunter. The only way to reach a well-streamlined body (fineness 5–8, FF ≈ 1.1–1.3) is a full-length fuselage.
+
+**Required architecture:** All future designs must use a single continuous fuselage body from nose to tail, shaped by the two-spline fuselage generator in `DESIGN/AGENTS/two_spline_fuselage/` or derived tools. Wings, tail, and propulsion attach to this fuselage.
