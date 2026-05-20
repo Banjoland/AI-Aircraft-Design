@@ -59,10 +59,18 @@ print(f"Model: {model_path.name}", file=sys.stderr)
 companion_path = model_path.with_suffix(".json")
 if companion_path.exists():
     geom_meta = json.loads(companion_path.read_text())
-    WING_AREA = float(geom_meta.get("wing_area_m2", WING_AREA))
-    WING_SPAN = float(geom_meta.get("wingspan_m", WING_SPAN))
-    WING_MAC = float(geom_meta.get("wing_mac_m", WING_MAC))
-    X_CG = float(geom_meta.get("x_cg_m", geom_meta.get("pilot_x_m", X_CG)))
+    WING_AREA    = float(geom_meta.get("wing_area_m2", WING_AREA))
+    WING_SPAN    = float(geom_meta.get("wingspan_m", WING_SPAN))
+    WING_MAC     = float(geom_meta.get("wing_mac_m", WING_MAC))
+    X_CG         = float(geom_meta.get("x_cg_m", geom_meta.get("pilot_x_m", X_CG)))
+    # Read spec constants if embedded by generate.py
+    if "spec_MTOW_kg" in geom_meta:
+        MTOW_KG      = float(geom_meta["spec_MTOW_kg"])
+        MTOW_N       = MTOW_KG * 9.81
+    if "spec_vstall_lim_ms" in geom_meta:
+        VSTALL_LIMIT = float(geom_meta["spec_vstall_lim_ms"])
+    if "spec_P_engine_kw" in geom_meta and geom_meta["spec_P_engine_kw"] > 0:
+        P_ENGINE_W   = float(geom_meta["spec_P_engine_kw"]) * 1000.0
 else:
     print(f"WARN: no companion geometry JSON for {model_path.name}; using fallback reference geometry", file=sys.stderr)
 

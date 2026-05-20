@@ -25,8 +25,8 @@ EVAL_SCORES  = PROJECT_ROOT / "EVALUATION" / "scores"
 EVAL_SCORES.mkdir(parents=True, exist_ok=True)
 
 # ── Cost-function reference values (EVALUATION/COST FUNCTION.md) ───────────────
-VSTALL_SPEC   = 21.0    # m/s - stall speed limit from SPECIFICATION.md
-VCRUISE_REF   = 54.2    # m/s - cruise speed target from SPECIFICATION.md
+VSTALL_SPEC   = 17.9    # m/s - stall speed limit from SPECIFICATION.md (40 mph)
+VCRUISE_REF   = 50.0    # m/s - cruise speed target from SPECIFICATION.md (180 km/hr)
 STABILITY_MAX = 100.0   # score for unstable / unconfirmed aircraft
 EMPTY_MASS_SPEC = 110.0 # kg - empty mass limit from SPECIFICATION.md
 
@@ -50,14 +50,25 @@ vcruise  = sim.get("vcruise_75pct_ms",    0.0)
 cm_alpha = sim.get("Cm_alpha_per_deg",    0.0)  # /deg; 0 = unresolved
 stable   = sim.get("longitudinal_stable", False)
 
-# ── Read empty mass from companion JSON written by generate.py ─────────────────
+# ── Read empty mass — prefer weight_estimator result over generate.py estimate ──
 model_name   = sim.get("model", sim_path.stem.replace("_alpha_sweep", ""))
 model_stem   = Path(model_name).stem  # strip .vsp3 if present
 companion    = AIRCRAFT_DIR / f"{model_stem}.json"
 empty_mass   = None
-if companion.exists():
+# 1. Try weight estimator (component build-up, most accurate)
+WE_DIR    = PROJECT_ROOT / "DESIGN" / "AGENTS" / "weight_estimator"
+we_path   = WE_DIR / f"{model_stem}_weight.json"
+if we_path.exists():
+    we = json.loads(we_path.read_text())
+    empty_mass = we.get("empty_mass_kg")
+# 2. Fallback to companion JSON skin-based estimate
+if empty_mass is None and companion.exists():
     geom = json.loads(companion.read_text())
     empty_mass = geom.get("empty_mass_est_kg")
+
+# ── Try to read dynamic stability results (preferred over Cm_alpha proxy) ──────
+dyn_stability_path = SIM_RESULTS / f"{model_stem}_dynamic_stability.json"
+dyn_stability      = json.loads(dyn_stability_path.read_text()) if dyn_stability_path.exists() else None
 if empty_mass is None:
     print(f"WARN: no companion geometry JSON for {model_stem}; mass cost set to max", file=sys.stderr)
 
@@ -70,21 +81,35 @@ else:
     stall_note = f"V_stall {vstall:.2f} > {VSTALL_SPEC} m/s - penalty {stall_cost:.3f}"
 
 # ── Cost function 2: Stability ────────────────────────────────────────────────
-# Use static Cm_alpha as a proxy for longitudinal stability eigenvalue distance.
-# Full s-plane analysis (with dynamic derivatives) is deferred until CMy is resolved.
-# For now:
-#   - If Cm_alpha is unavailable (= 0.0) or aircraft is marked unstable -> score 100
-#   - If stable: stability_cost = 1 / |Cm_alpha| (per deg, then scaled)
-#     Cm_alpha is in /deg; convert to rad for physical scaling: |Cm_alpha_rad| = |Cm_alpha_deg|/57.3
-if not stable or cm_alpha == 0.0:
+# Preferred: use dynamic stability eigenvalue distance from origin (s-plane).
+# Fallback: use static Cm_alpha as proxy when dynamic stability results unavailable.
+if dyn_stability is not None:
+    dyn_status = dyn_stability.get("stability_status", "UNSTABLE")
+    min_dist   = dyn_stability.get("min_eigenvalue_dist", 0.0)
+    if dyn_status == "stable" and min_dist > 1e-9:
+        stability_cost = 1.0 / min_dist
+        stability_note = (
+            f"Dynamic stability: all modes stable. "
+            f"min eigenvalue dist = {min_dist:.4f} rad/s → "
+            f"cost = 1/{min_dist:.4f} = {stability_cost:.4f}"
+        )
+    else:
+        stability_cost = STABILITY_MAX
+        stability_note = (
+            f"Dynamic stability: {dyn_status} (min_dist={min_dist:.4f}). "
+            f"Assigning maximum penalty {STABILITY_MAX}."
+        )
+elif not stable or cm_alpha == 0.0:
     stability_cost = STABILITY_MAX
-    stability_note = ("Cm_alpha unresolved or aircraft unstable - "
-                      f"assigning maximum penalty {STABILITY_MAX}")
+    stability_note = ("Cm_alpha unresolved or aircraft unstable (no dynamic stability results). "
+                      f"Assigning maximum penalty {STABILITY_MAX}")
 else:
-    cm_alpha_rad = abs(cm_alpha) * (180.0 / math.pi)   # |/deg| -> |/rad|
+    # Cm_alpha proxy: convert /deg to /rad; cost = 1 / |Cm_alpha_rad|
+    cm_alpha_rad = abs(cm_alpha) * (180.0 / math.pi)
     stability_cost = 1.0 / cm_alpha_rad
-    stability_note = (f"Cm_alpha = {cm_alpha:.5f}/deg -> {cm_alpha_rad:.4f}/rad; "
-                      f"stability cost = {stability_cost:.4f}")
+    stability_note = (f"Cm_alpha proxy (no dynamic stability results): "
+                      f"{cm_alpha:.5f}/deg → {cm_alpha_rad:.4f}/rad; "
+                      f"cost = {stability_cost:.4f}")
 
 # ── Cost function 3: Cruise speed (reward — subtracted) ──────────────────────
 cruise_reward_raw = math.exp(3.0 * (vcruise - VCRUISE_REF) / VCRUISE_REF)
@@ -123,15 +148,19 @@ report = {
 
     "total_cost":       round(total_cost,      4),
 
+    "stability_source": "dynamic_eigenvalue" if dyn_stability else "cm_alpha_proxy",
+
     "inputs": {
-        "vstall_ms":           vstall,
-        "vstall_spec_ms":      VSTALL_SPEC,
-        "vcruise_ms":          vcruise,
-        "vcruise_ref_ms":      VCRUISE_REF,
-        "cm_alpha_per_deg":    cm_alpha,
-        "longitudinal_stable": stable,
-        "empty_mass_kg":       empty_mass,
-        "empty_mass_spec_kg":  EMPTY_MASS_SPEC,
+        "vstall_ms":              vstall,
+        "vstall_spec_ms":         VSTALL_SPEC,
+        "vcruise_ms":             vcruise,
+        "vcruise_ref_ms":         VCRUISE_REF,
+        "cm_alpha_per_deg":       cm_alpha,
+        "longitudinal_stable":    stable,
+        "empty_mass_kg":          empty_mass,
+        "empty_mass_spec_kg":     EMPTY_MASS_SPEC,
+        "dyn_stability_status":   dyn_stability.get("stability_status") if dyn_stability else None,
+        "dyn_min_eigenvalue_dist": dyn_stability.get("min_eigenvalue_dist") if dyn_stability else None,
     },
 
     "summary": (

@@ -1,0 +1,39 @@
+{
+  "model": "MODEL_05_19_2026_05.vsp3",
+  "timestamp": "2026-05-19T23:24:46.697017",
+  "inputs": {
+    "material": "cfrp",
+    "engine_type": "gasoline4",
+    "engine_hp": 41.6,
+    "MTOW_kg": 295.0,
+    "n_ult": 5.699999999999999
+  },
+  "geometry_used": {
+    "fuse_wetted_m2": 14.45,
+    "wing_span_m": 9.9,
+    "wing_area_m2": 8.168,
+    "wing_taper": 0.65,
+    "wing_tc_root": 0.12,
+    "wing_sweep_deg": 1.0,
+    "htail_span_m": 2.4,
+    "vtail_height_m": 0.7
+  },
+  "components": {
+    "wing": 12.388,
+    "fuselage": 23.12,
+    "htail": 2.676,
+    "vtail": 0.732,
+    "landing_gear": 8.26,
+    "engine": 33.544,
+    "engine_systems": 9.392,
+    "propeller": 2.0,
+    "avionics": 5.5,
+    "controls": 3.54,
+    "fuel_system": 1.2
+  },
+  "empty_mass_kg": 102.353,
+  "spec_limit_kg": 110.0,
+  "spec_margin_kg": 7.647,
+  "fuel_capacity_kg": 75.647,
+  "spec_ok": true
+}

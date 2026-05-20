@@ -1,0 +1,15 @@
+{
+  "MTOW_kg":          295.0,
+  "P_engine_hp":       41.6,
+  "V_stall_max_ms":    17.9,
+  "V_cruise_ms":       50.0,
+  "RC_min_ms":          2.5,
+  "CL_max":             1.8,
+  "CD0":                0.025,
+  "e_oswald":           0.80,
+  "AR_design":         12.0,
+  "eta_prop":           0.75,
+  "eta_prop_climb":     0.65,
+  "rho_sl":             1.225,
+  "WS_range_Nm2":      [100, 700]
+}

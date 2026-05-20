@@ -1,0 +1,39 @@
+{
+  "model": "MODEL_295kg_31kW.vsp3",
+  "timestamp": "2026-05-19T23:01:15.190158",
+  "inputs": {
+    "material": "cfrp",
+    "engine_type": "gasoline4",
+    "engine_hp": 41.6,
+    "MTOW_kg": 295.0,
+    "n_ult": 5.699999999999999
+  },
+  "geometry_used": {
+    "fuse_wetted_m2": 13.5,
+    "wing_span_m": 9.9,
+    "wing_area_m2": 8.17,
+    "wing_taper": 0.65,
+    "wing_tc_root": 0.12,
+    "wing_sweep_deg": 2.0,
+    "htail_span_m": 2.4,
+    "vtail_height_m": 1.5
+  },
+  "components": {
+    "wing": 12.389,
+    "fuselage": 21.6,
+    "htail": 3.735,
+    "vtail": 2.954,
+    "landing_gear": 8.26,
+    "engine": 33.544,
+    "engine_systems": 9.392,
+    "propeller": 2.0,
+    "avionics": 5.5,
+    "controls": 3.54,
+    "fuel_system": 1.744
+  },
+  "empty_mass_kg": 104.657,
+  "spec_limit_kg": 110.0,
+  "spec_margin_kg": 5.343,
+  "fuel_capacity_kg": 73.343,
+  "spec_ok": true
+}

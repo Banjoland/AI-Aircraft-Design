@@ -1,0 +1,44 @@
+{
+  "model": "MODEL_295kg_31kW.vsp3",
+  "timestamp": "2026-05-19T23:01:15.901088",
+  "geometry": {
+    "wing_span_m": 9.9,
+    "wing_area_m2": 8.17,
+    "wing_mac_m": 0.837,
+    "AR_wing": 12.0,
+    "x_cg_m": 2.2,
+    "x_ac_wing_m": 2.2092,
+    "x_cg_frac_mac": 0.2389,
+    "l_h_m": 3.2024,
+    "l_v_m": 2.932
+  },
+  "htail": {
+    "S_h_current_m2": 1.0716,
+    "V_H_current": 0.50183,
+    "SM_current_frac": 0.2659,
+    "SM_current_pct": 26.59,
+    "S_h_req_min_m2": 0.1638,
+    "S_h_req_target_m2": 0.5842,
+    "S_h_req_max_m2": 1.0047,
+    "V_H_req_target": 0.27359,
+    "htail_ok": false,
+    "delta_S_h_m2": -0.4874,
+    "new_htail_root_chord_m": 0.254
+  },
+  "vtail": {
+    "S_v_current_m2": 0.8475,
+    "V_V_current": 0.03072,
+    "Cn_beta_current": 0.06442,
+    "S_v_required_m2": 0.7104,
+    "V_V_required": 0.02575,
+    "Cn_beta_fuse": -0.02475,
+    "vtail_ok": true,
+    "delta_S_v_m2": -0.1371,
+    "new_vtail_root_chord_m": 0.75
+  },
+  "stability_targets": {
+    "SM_target": 0.15,
+    "SM_min": 0.05,
+    "SM_max": 0.25
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "model": "MODEL_TEST_tail.vsp3",
+  "timestamp": "2026-05-19T22:10:05.065884",
+  "geometry": {
+    "wing_span_m": 9.8,
+    "wing_area_m2": 4.2,
+    "wing_mac_m": 0.44,
+    "AR_wing": 22.87,
+    "x_cg_m": 2.5,
+    "x_ac_wing_m": 1.91,
+    "x_cg_frac_mac": 1.5909,
+    "l_h_m": 2.6575,
+    "l_v_m": 2.465
+  },
+  "htail": {
+    "S_h_current_m2": 0.432,
+    "V_H_current": 0.62123,
+    "SM_current_frac": -0.951,
+    "SM_current_pct": -95.1,
+    "S_h_req_min_m2": 1.541,
+    "S_h_req_target_m2": 1.6518,
+    "S_h_req_max_m2": 1.7626,
+    "V_H_req_target": 2.37534,
+    "htail_ok": false,
+    "delta_S_h_m2": 1.2198,
+    "new_htail_root_chord_m": 1.316
+  },
+  "vtail": {
+    "S_v_current_m2": 0.21,
+    "V_V_current": 0.01258,
+    "Cn_beta_current": -0.00081,
+    "S_v_required_m2": 0.5196,
+    "V_V_required": 0.03112,
+    "Cn_beta_fuse": -0.03528,
+    "vtail_ok": false,
+    "delta_S_v_m2": 0.3096,
+    "new_vtail_root_chord_m": 0.99
+  },
+  "stability_targets": {
+    "SM_target": 0.15,
+    "SM_min": 0.05,
+    "SM_max": 0.25
+  }
+}

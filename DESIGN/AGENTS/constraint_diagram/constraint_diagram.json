@@ -1,0 +1,643 @@
+{
+  "timestamp": "2026-05-19T22:54:23.522851",
+  "spec": {
+    "MTOW_kg": 295.0,
+    "P_engine_hp": 41.6,
+    "V_stall_max_ms": 17.9,
+    "V_cruise_ms": 50.0,
+    "RC_min_ms": 2.5,
+    "CL_max": 1.8,
+    "CL_max_climb": 1.4,
+    "CD0": 0.025,
+    "e_oswald": 0.8,
+    "AR_design": 12.0,
+    "eta_prop": 0.75,
+    "eta_prop_climb": 0.65,
+    "rho_sl": 1.225,
+    "WS_range_Nm2": [
+      100,
+      700
+    ]
+  },
+  "stall_limit_WS_Nm2": 353.3,
+  "TW_avail_cruise": 0.16079,
+  "TW_avail_climb": 0.23225,
+  "TW_req_cruise_at_stall": 0.11602,
+  "TW_req_climb_at_stall": 0.14359,
+  "P_req_cruise_hp": 30.02,
+  "P_req_climb_hp": 25.72,
+  "cruise_deficit_hp": 0,
+  "climb_deficit_hp": 0,
+  "feasible_WS_range": [
+    250,
+    350
+  ],
+  "design_feasible": true,
+  "sweep": [
+    {
+      "WS_Nm2": 100,
+      "TW_cruise": 0.384978,
+      "TW_climb": 0.227161
+    },
+    {
+      "WS_Nm2": 105,
+      "TW_cruise": 0.366857,
+      "TW_climb": 0.220899
+    },
+    {
+      "WS_Nm2": 110,
+      "TW_cruise": 0.350393,
+      "TW_climb": 0.215234
+    },
+    {
+      "WS_Nm2": 115,
+      "TW_cruise": 0.335371,
+      "TW_climb": 0.210087
+    },
+    {
+      "WS_Nm2": 120,
+      "TW_cruise": 0.321609,
+      "TW_climb": 0.205395
+    },
+    {
+      "WS_Nm2": 125,
+      "TW_cruise": 0.308957,
+      "TW_climb": 0.201102
+    },
+    {
+      "WS_Nm2": 130,
+      "TW_cruise": 0.297286,
+      "TW_climb": 0.197162
+    },
+    {
+      "WS_Nm2": 135,
+      "TW_cruise": 0.286488,
+      "TW_climb": 0.193537
+    },
+    {
+      "WS_Nm2": 140,
+      "TW_cruise": 0.276469,
+      "TW_climb": 0.190192
+    },
+    {
+      "WS_Nm2": 145,
+      "TW_cruise": 0.267148,
+      "TW_climb": 0.187098
+    },
+    {
+      "WS_Nm2": 150,
+      "TW_cruise": 0.258456,
+      "TW_climb": 0.184231
+    },
+    {
+      "WS_Nm2": 155,
+      "TW_cruise": 0.250332,
+      "TW_climb": 0.181568
+    },
+    {
+      "WS_Nm2": 160,
+      "TW_cruise": 0.242722,
+      "TW_climb": 0.17909
+    },
+    {
+      "WS_Nm2": 165,
+      "TW_cruise": 0.23558,
+      "TW_climb": 0.176781
+    },
+    {
+      "WS_Nm2": 170,
+      "TW_cruise": 0.228865,
+      "TW_climb": 0.174625
+    },
+    {
+      "WS_Nm2": 175,
+      "TW_cruise": 0.222539,
+      "TW_climb": 0.172609
+    },
+    {
+      "WS_Nm2": 180,
+      "TW_cruise": 0.216571,
+      "TW_climb": 0.170723
+    },
+    {
+      "WS_Nm2": 185,
+      "TW_cruise": 0.210932,
+      "TW_climb": 0.168954
+    },
+    {
+      "WS_Nm2": 190,
+      "TW_cruise": 0.205594,
+      "TW_climb": 0.167295
+    },
+    {
+      "WS_Nm2": 195,
+      "TW_cruise": 0.200537,
+      "TW_climb": 0.165736
+    },
+    {
+      "WS_Nm2": 200,
+      "TW_cruise": 0.195737,
+      "TW_climb": 0.164269
+    },
+    {
+      "WS_Nm2": 205,
+      "TW_cruise": 0.191177,
+      "TW_climb": 0.16289
+    },
+    {
+      "WS_Nm2": 210,
+      "TW_cruise": 0.186839,
+      "TW_climb": 0.16159
+    },
+    {
+      "WS_Nm2": 215,
+      "TW_cruise": 0.182708,
+      "TW_climb": 0.160364
+    },
+    {
+      "WS_Nm2": 220,
+      "TW_cruise": 0.17877,
+      "TW_climb": 0.159208
+    },
+    {
+      "WS_Nm2": 225,
+      "TW_cruise": 0.175011,
+      "TW_climb": 0.158117
+    },
+    {
+      "WS_Nm2": 230,
+      "TW_cruise": 0.171421,
+      "TW_climb": 0.157086
+    },
+    {
+      "WS_Nm2": 235,
+      "TW_cruise": 0.167988,
+      "TW_climb": 0.156112
+    },
+    {
+      "WS_Nm2": 240,
+      "TW_cruise": 0.164702,
+      "TW_climb": 0.155191
+    },
+    {
+      "WS_Nm2": 245,
+      "TW_cruise": 0.161555,
+      "TW_climb": 0.15432
+    },
+    {
+      "WS_Nm2": 250,
+      "TW_cruise": 0.158538,
+      "TW_climb": 0.153496
+    },
+    {
+      "WS_Nm2": 255,
+      "TW_cruise": 0.155644,
+      "TW_climb": 0.152716
+    },
+    {
+      "WS_Nm2": 260,
+      "TW_cruise": 0.152866,
+      "TW_climb": 0.151977
+    },
+    {
+      "WS_Nm2": 265,
+      "TW_cruise": 0.150196,
+      "TW_climb": 0.151278
+    },
+    {
+      "WS_Nm2": 270,
+      "TW_cruise": 0.147629,
+      "TW_climb": 0.150615
+    },
+    {
+      "WS_Nm2": 275,
+      "TW_cruise": 0.145159,
+      "TW_climb": 0.149988
+    },
+    {
+      "WS_Nm2": 280,
+      "TW_cruise": 0.142782,
+      "TW_climb": 0.149394
+    },
+    {
+      "WS_Nm2": 285,
+      "TW_cruise": 0.140491,
+      "TW_climb": 0.148831
+    },
+    {
+      "WS_Nm2": 290,
+      "TW_cruise": 0.138284,
+      "TW_climb": 0.148298
+    },
+    {
+      "WS_Nm2": 295,
+      "TW_cruise": 0.136155,
+      "TW_climb": 0.147793
+    },
+    {
+      "WS_Nm2": 300,
+      "TW_cruise": 0.1341,
+      "TW_climb": 0.147316
+    },
+    {
+      "WS_Nm2": 305,
+      "TW_cruise": 0.132117,
+      "TW_climb": 0.146863
+    },
+    {
+      "WS_Nm2": 310,
+      "TW_cruise": 0.130201,
+      "TW_climb": 0.146435
+    },
+    {
+      "WS_Nm2": 315,
+      "TW_cruise": 0.128349,
+      "TW_climb": 0.14603
+    },
+    {
+      "WS_Nm2": 320,
+      "TW_cruise": 0.126558,
+      "TW_climb": 0.145648
+    },
+    {
+      "WS_Nm2": 325,
+      "TW_cruise": 0.124826,
+      "TW_climb": 0.145286
+    },
+    {
+      "WS_Nm2": 330,
+      "TW_cruise": 0.12315,
+      "TW_climb": 0.144944
+    },
+    {
+      "WS_Nm2": 335,
+      "TW_cruise": 0.121526,
+      "TW_climb": 0.144621
+    },
+    {
+      "WS_Nm2": 340,
+      "TW_cruise": 0.119954,
+      "TW_climb": 0.144317
+    },
+    {
+      "WS_Nm2": 345,
+      "TW_cruise": 0.118431,
+      "TW_climb": 0.14403
+    },
+    {
+      "WS_Nm2": 350,
+      "TW_cruise": 0.116954,
+      "TW_climb": 0.143761
+    },
+    {
+      "WS_Nm2": 355,
+      "TW_cruise": 0.115522,
+      "TW_climb": 0.143507
+    },
+    {
+      "WS_Nm2": 360,
+      "TW_cruise": 0.114132,
+      "TW_climb": 0.143268
+    },
+    {
+      "WS_Nm2": 365,
+      "TW_cruise": 0.112784,
+      "TW_climb": 0.143045
+    },
+    {
+      "WS_Nm2": 370,
+      "TW_cruise": 0.111475,
+      "TW_climb": 0.142835
+    },
+    {
+      "WS_Nm2": 375,
+      "TW_cruise": 0.110203,
+      "TW_climb": 0.142639
+    },
+    {
+      "WS_Nm2": 380,
+      "TW_cruise": 0.108969,
+      "TW_climb": 0.142456
+    },
+    {
+      "WS_Nm2": 385,
+      "TW_cruise": 0.107769,
+      "TW_climb": 0.142286
+    },
+    {
+      "WS_Nm2": 390,
+      "TW_cruise": 0.106602,
+      "TW_climb": 0.142128
+    },
+    {
+      "WS_Nm2": 395,
+      "TW_cruise": 0.105468,
+      "TW_climb": 0.141982
+    },
+    {
+      "WS_Nm2": 400,
+      "TW_cruise": 0.104365,
+      "TW_climb": 0.141846
+    },
+    {
+      "WS_Nm2": 405,
+      "TW_cruise": 0.103291,
+      "TW_climb": 0.141722
+    },
+    {
+      "WS_Nm2": 410,
+      "TW_cruise": 0.102247,
+      "TW_climb": 0.141607
+    },
+    {
+      "WS_Nm2": 415,
+      "TW_cruise": 0.10123,
+      "TW_climb": 0.141503
+    },
+    {
+      "WS_Nm2": 420,
+      "TW_cruise": 0.10024,
+      "TW_climb": 0.141409
+    },
+    {
+      "WS_Nm2": 425,
+      "TW_cruise": 0.099276,
+      "TW_climb": 0.141323
+    },
+    {
+      "WS_Nm2": 430,
+      "TW_cruise": 0.098337,
+      "TW_climb": 0.141247
+    },
+    {
+      "WS_Nm2": 435,
+      "TW_cruise": 0.097422,
+      "TW_climb": 0.141179
+    },
+    {
+      "WS_Nm2": 440,
+      "TW_cruise": 0.09653,
+      "TW_climb": 0.14112
+    },
+    {
+      "WS_Nm2": 445,
+      "TW_cruise": 0.095661,
+      "TW_climb": 0.141069
+    },
+    {
+      "WS_Nm2": 450,
+      "TW_cruise": 0.094814,
+      "TW_climb": 0.141026
+    },
+    {
+      "WS_Nm2": 455,
+      "TW_cruise": 0.093987,
+      "TW_climb": 0.14099
+    },
+    {
+      "WS_Nm2": 460,
+      "TW_cruise": 0.093181,
+      "TW_climb": 0.140961
+    },
+    {
+      "WS_Nm2": 465,
+      "TW_cruise": 0.092394,
+      "TW_climb": 0.14094
+    },
+    {
+      "WS_Nm2": 470,
+      "TW_cruise": 0.091627,
+      "TW_climb": 0.140925
+    },
+    {
+      "WS_Nm2": 475,
+      "TW_cruise": 0.090878,
+      "TW_climb": 0.140917
+    },
+    {
+      "WS_Nm2": 480,
+      "TW_cruise": 0.090146,
+      "TW_climb": 0.140916
+    },
+    {
+      "WS_Nm2": 485,
+      "TW_cruise": 0.089432,
+      "TW_climb": 0.140921
+    },
+    {
+      "WS_Nm2": 490,
+      "TW_cruise": 0.088735,
+      "TW_climb": 0.140931
+    },
+    {
+      "WS_Nm2": 495,
+      "TW_cruise": 0.088054,
+      "TW_climb": 0.140948
+    },
+    {
+      "WS_Nm2": 500,
+      "TW_cruise": 0.087389,
+      "TW_climb": 0.14097
+    },
+    {
+      "WS_Nm2": 505,
+      "TW_cruise": 0.08674,
+      "TW_climb": 0.140998
+    },
+    {
+      "WS_Nm2": 510,
+      "TW_cruise": 0.086105,
+      "TW_climb": 0.141032
+    },
+    {
+      "WS_Nm2": 515,
+      "TW_cruise": 0.085484,
+      "TW_climb": 0.14107
+    },
+    {
+      "WS_Nm2": 520,
+      "TW_cruise": 0.084878,
+      "TW_climb": 0.141113
+    },
+    {
+      "WS_Nm2": 525,
+      "TW_cruise": 0.084285,
+      "TW_climb": 0.141162
+    },
+    {
+      "WS_Nm2": 530,
+      "TW_cruise": 0.083705,
+      "TW_climb": 0.141215
+    },
+    {
+      "WS_Nm2": 535,
+      "TW_cruise": 0.083138,
+      "TW_climb": 0.141273
+    },
+    {
+      "WS_Nm2": 540,
+      "TW_cruise": 0.082584,
+      "TW_climb": 0.141335
+    },
+    {
+      "WS_Nm2": 545,
+      "TW_cruise": 0.082042,
+      "TW_climb": 0.141401
+    },
+    {
+      "WS_Nm2": 550,
+      "TW_cruise": 0.081512,
+      "TW_climb": 0.141472
+    },
+    {
+      "WS_Nm2": 555,
+      "TW_cruise": 0.080993,
+      "TW_climb": 0.141547
+    },
+    {
+      "WS_Nm2": 560,
+      "TW_cruise": 0.080485,
+      "TW_climb": 0.141626
+    },
+    {
+      "WS_Nm2": 565,
+      "TW_cruise": 0.079989,
+      "TW_climb": 0.141709
+    },
+    {
+      "WS_Nm2": 570,
+      "TW_cruise": 0.079503,
+      "TW_climb": 0.141796
+    },
+    {
+      "WS_Nm2": 575,
+      "TW_cruise": 0.079027,
+      "TW_climb": 0.141887
+    },
+    {
+      "WS_Nm2": 580,
+      "TW_cruise": 0.078561,
+      "TW_climb": 0.141981
+    },
+    {
+      "WS_Nm2": 585,
+      "TW_cruise": 0.078105,
+      "TW_climb": 0.142078
+    },
+    {
+      "WS_Nm2": 590,
+      "TW_cruise": 0.077659,
+      "TW_climb": 0.142179
+    },
+    {
+      "WS_Nm2": 595,
+      "TW_cruise": 0.077222,
+      "TW_climb": 0.142284
+    },
+    {
+      "WS_Nm2": 600,
+      "TW_cruise": 0.076794,
+      "TW_climb": 0.142392
+    },
+    {
+      "WS_Nm2": 605,
+      "TW_cruise": 0.076375,
+      "TW_climb": 0.142503
+    },
+    {
+      "WS_Nm2": 610,
+      "TW_cruise": 0.075965,
+      "TW_climb": 0.142617
+    },
+    {
+      "WS_Nm2": 615,
+      "TW_cruise": 0.075563,
+      "TW_climb": 0.142734
+    },
+    {
+      "WS_Nm2": 620,
+      "TW_cruise": 0.075169,
+      "TW_climb": 0.142854
+    },
+    {
+      "WS_Nm2": 625,
+      "TW_cruise": 0.074784,
+      "TW_climb": 0.142977
+    },
+    {
+      "WS_Nm2": 630,
+      "TW_cruise": 0.074406,
+      "TW_climb": 0.143102
+    },
+    {
+      "WS_Nm2": 635,
+      "TW_cruise": 0.074036,
+      "TW_climb": 0.143231
+    },
+    {
+      "WS_Nm2": 640,
+      "TW_cruise": 0.073673,
+      "TW_climb": 0.143362
+    },
+    {
+      "WS_Nm2": 645,
+      "TW_cruise": 0.073317,
+      "TW_climb": 0.143496
+    },
+    {
+      "WS_Nm2": 650,
+      "TW_cruise": 0.072969,
+      "TW_climb": 0.143632
+    },
+    {
+      "WS_Nm2": 655,
+      "TW_cruise": 0.072628,
+      "TW_climb": 0.143771
+    },
+    {
+      "WS_Nm2": 660,
+      "TW_cruise": 0.072293,
+      "TW_climb": 0.143913
+    },
+    {
+      "WS_Nm2": 665,
+      "TW_cruise": 0.071966,
+      "TW_climb": 0.144056
+    },
+    {
+      "WS_Nm2": 670,
+      "TW_cruise": 0.071644,
+      "TW_climb": 0.144202
+    },
+    {
+      "WS_Nm2": 675,
+      "TW_cruise": 0.071329,
+      "TW_climb": 0.144351
+    },
+    {
+      "WS_Nm2": 680,
+      "TW_cruise": 0.07102,
+      "TW_climb": 0.144501
+    },
+    {
+      "WS_Nm2": 685,
+      "TW_cruise": 0.070718,
+      "TW_climb": 0.144654
+    },
+    {
+      "WS_Nm2": 690,
+      "TW_cruise": 0.070421,
+      "TW_climb": 0.144809
+    },
+    {
+      "WS_Nm2": 695,
+      "TW_cruise": 0.07013,
+      "TW_climb": 0.144966
+    },
+    {
+      "WS_Nm2": 700,
+      "TW_cruise": 0.069845,
+      "TW_climb": 0.145125
+    }
+  ]
+}

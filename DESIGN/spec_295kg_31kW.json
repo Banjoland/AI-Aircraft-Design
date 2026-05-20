@@ -1,0 +1,82 @@
+{
+  "_comment": "Single-seat high-wing, 2m pilot, 31 kW engine, 900 nm range. MTOW 295 kg.",
+
+  "MTOW_kg":           295.0,
+  "P_engine_kw":        31.0,
+  "engine_mass_kg":     42.0,
+  "systems_mass_kg":     9.0,
+  "useful_load_kg":    110.0,
+  "CL_max":              1.8,
+  "vstall_lim_ms":      17.9,
+  "pilot_height_min_m":  1.25,
+
+  "total_length_m": 6.2,
+  "n_sections":      12,
+
+  "top_spline_knots": [
+    [0.00,  0.12],
+    [0.35,  0.35],
+    [0.75,  0.46],
+    [1.50,  0.64],
+    [2.30,  0.82],
+    [3.20,  0.72],
+    [4.10,  0.50],
+    [5.20,  0.28],
+    [6.20,  0.07]
+  ],
+
+  "bot_spline_knots": [
+    [0.00, -0.12],
+    [0.35, -0.35],
+    [0.75, -0.45],
+    [1.50, -0.52],
+    [2.30, -0.53],
+    [3.20, -0.42],
+    [4.10, -0.22],
+    [5.20,  0.00],
+    [6.20,  0.07]
+  ],
+
+  "hw_spline_knots": [
+    [0.00,  0.06],
+    [0.35,  0.34],
+    [0.75,  0.38],
+    [1.50,  0.47],
+    [2.30,  0.58],
+    [3.20,  0.50],
+    [4.10,  0.32],
+    [5.20,  0.15],
+    [6.20,  0.00]
+  ],
+
+  "wing_span":          9.9,
+  "wing_root_chord":    1.00,
+  "wing_tip_chord":     0.65,
+  "wing_sweep":          2.0,
+  "wing_dihedral":       1.0,
+  "wing_twist":         -1.5,
+  "wing_airfoil":       "NACA4412",
+  "wing_incidence_deg":  2.0,
+  "wing_x_m":            2.00,
+  "wing_z_m":            0.75,
+
+  "htail_span":          2.4,
+  "htail_root_chord":    0.380,
+  "htail_tip_chord":     0.260,
+  "htail_sweep":         5.0,
+  "htail_x_m":           5.30,
+  "htail_z_m":           0.10,
+
+  "vtail_height":        1.50,
+  "vtail_root_chord":    0.750,
+  "vtail_tip_chord":     0.380,
+  "vtail_sweep":        20.0,
+  "vtail_x_m":           5.00,
+  "vtail_z_m":           0.32,
+
+  "prop_diameter":       1.40,
+  "prop_x_m":           -0.05,
+
+  "max_slope_deg_warning": 20.0,
+  "max_curvature_warning":  0.9
+}

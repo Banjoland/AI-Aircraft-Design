@@ -1,0 +1,12 @@
+{
+  "MTOW_kg":            295.0,
+  "P_engine_hp":         41.6,
+  "V_stall_max_ms":      17.9,
+  "V_cruise_target_ms":  50.0,
+  "CL_max":               1.8,
+  "CD0":                  0.025,
+  "e_oswald":             0.80,
+  "AR_range":             [8, 10, 12, 14, 16],
+  "rho_sl":               1.225,
+  "power_fraction":       0.75
+}

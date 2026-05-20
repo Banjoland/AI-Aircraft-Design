@@ -148,6 +148,14 @@ if len(sys.argv) > 1:
     override_path = Path(sys.argv[1]).resolve()
     spec.update(json.loads(override_path.read_text()))
 
+# Allow spec JSON to override performance constants
+MTOW_KG         = float(spec.get("MTOW_kg",            MTOW_KG))
+MTOW_N          = MTOW_KG * 9.81
+ENGINE_MASS_KG  = float(spec.get("engine_mass_kg",     ENGINE_MASS_KG))
+SYSTEMS_MASS_KG = float(spec.get("systems_mass_kg",    SYSTEMS_MASS_KG))
+CL_MAX          = float(spec.get("CL_max",             CL_MAX))
+VSTALL_LIM      = float(spec.get("vstall_lim_ms",      VSTALL_LIM))
+
 # ── Helpers ────────────────────────────────────────────────────────────────────
 def _make_spline(knots):
     pts = np.array(sorted(knots, key=lambda p: p[0]), dtype=float)
@@ -417,7 +425,7 @@ vstall_est = (2.0 * MTOW_N / (RHO_SL * wing_area * CL_MAX)) ** 0.5
 
 # ── Pilot and engine bay compliance checks ─────────────────────────────────────
 # Spec: pilot 2.0 m tall; seated height ~0.92 m + 0.10 m seat + 0.05 m head clearance = 1.07 m min
-PILOT_HEIGHT_MIN_M = 1.07
+PILOT_HEIGHT_MIN_M = float(spec.get("pilot_height_min_m", 1.07))
 # Engine bay must enclose 0.8 m × 0.6 m × 0.6 m (x_length × width × height)
 ENGINE_BAY_LENGTH_M  = 0.8
 ENGINE_BAY_WIDTH_M   = 0.6
@@ -442,6 +450,44 @@ min_engine_h  = min(engine_hs)
 min_engine_w  = min(engine_ws)
 engine_h_ok   = min_engine_h >= ENGINE_BAY_HEIGHT_M
 engine_w_ok   = min_engine_w >= ENGINE_BAY_WIDTH_M
+
+# ── Wing / tail aerodynamic properties ────────────────────────────────────────
+wing_taper  = spec["wing_tip_chord"]  / spec["wing_root_chord"]
+wing_mac    = (2/3) * spec["wing_root_chord"]  * (1 + wing_taper  + wing_taper**2)  / (1 + wing_taper)
+htail_taper = spec["htail_tip_chord"] / spec["htail_root_chord"]
+htail_mac   = (2/3) * spec["htail_root_chord"] * (1 + htail_taper + htail_taper**2) / (1 + htail_taper)
+
+# Tail moment arm: htail quarter-MAC to wing quarter-MAC
+x_wing_qc  = float(spec["wing_x_m"])  + wing_mac  * 0.25
+x_htail_qc = float(spec["htail_x_m"]) + htail_mac * 0.25
+tail_moment_arm = x_htail_qc - x_wing_qc
+
+# Horizontal tail volume coefficient
+V_H = (htail_area * tail_moment_arm) / (wing_area * wing_mac) if wing_mac > 0 else 0.0
+
+# ── CG estimate at MTOW ────────────────────────────────────────────────────────
+USEFUL_LOAD_KG = float(spec.get("useful_load_kg", 117.0))
+x_engine_m     = (engine_start + engine_end) / 2.0
+fuel_kg        = max(0.0, MTOW_KG - empty_mass - USEFUL_LOAD_KG)
+x_fuel_m       = min(x_engine_m + 0.25, float(spec["wing_x_m"]) - 0.10)
+
+m_fuse    = fuse_wetted  * SKIN_DENSITY
+m_wing    = wing_wetted  * SKIN_DENSITY
+m_htail   = htail_wetted * SKIN_DENSITY
+m_vtail   = vtail_wetted * SKIN_DENSITY
+
+cg_num = (
+    m_fuse    * (L / 2.0)
+    + m_wing  * (float(spec["wing_x_m"])  + wing_mac  * 0.25)
+    + m_htail * (float(spec["htail_x_m"]) + htail_mac * 0.25)
+    + m_vtail * (float(spec["vtail_x_m"]) + spec["vtail_root_chord"] * 0.25)
+    + ENGINE_MASS_KG  * x_engine_m
+    + SYSTEMS_MASS_KG * (L * 0.3)
+    + fuel_kg         * x_fuel_m
+    + USEFUL_LOAD_KG  * float(spec["wing_x_m"])
+)
+cg_den = m_fuse + m_wing + m_htail + m_vtail + ENGINE_MASS_KG + SYSTEMS_MASS_KG + fuel_kg + USEFUL_LOAD_KG
+x_cg_est = cg_num / cg_den if cg_den > 0 else L / 2.0
 
 # ── Companion JSON and stdout ──────────────────────────────────────────────────
 summary = {
@@ -471,12 +517,39 @@ summary = {
     "vstall_ok":               vstall_est < VSTALL_LIM,
     "wingspan_m":              spec["wing_span"],
     "wingspan_ok":             spec["wing_span"] <= 15.0,
+    # Wing chord / MAC
+    "wing_root_chord_m":       spec["wing_root_chord"],
+    "wing_tip_chord_m":        spec["wing_tip_chord"],
+    "wing_taper_ratio":        round(wing_taper, 4),
+    "wing_mac_m":              round(wing_mac, 4),
+    "wing_span_m":             spec["wing_span"],
+    # Horizontal tail chord / MAC
+    "htail_root_chord_m":      spec["htail_root_chord"],
+    "htail_tip_chord_m":       spec["htail_tip_chord"],
+    "htail_mac_m":             round(htail_mac, 4),
+    "htail_span_m":            spec["htail_span"],
+    # Tail volume
+    "tail_moment_arm_m":       round(tail_moment_arm, 3),
+    "V_H":                     round(V_H, 4),
+    # Vertical tail chord
+    "vtail_root_chord_m":      spec["vtail_root_chord"],
+    "vtail_tip_chord_m":       spec["vtail_tip_chord"],
+    # Positions
     "wing_x_m":                spec["wing_x_m"],
     "wing_z_m":                spec["wing_z_m"],
     "htail_x_m":               spec["htail_x_m"],
     "vtail_x_m":               spec["vtail_x_m"],
     "prop_x_m":                spec["prop_x_m"],
     "wing_airfoil":            spec.get("wing_airfoil", ""),
+    # Engine bay
+    "engine_bay_start_m":      round(engine_start, 3),
+    "engine_bay_end_m":        round(engine_end, 3),
+    "x_engine_m":              round(x_engine_m, 3),
+    # CG estimate
+    "x_cg_m":                  round(x_cg_est, 3),
+    "fuel_kg_est":             round(fuel_kg, 1),
+    "useful_load_kg":          USEFUL_LOAD_KG,
+    # Compliance
     "cockpit_x_m":             round(cockpit_x, 2),
     "cockpit_height_m":        round(cockpit_h, 3),
     "pilot_clearance_ok":      pilot_ok,
@@ -485,6 +558,12 @@ summary = {
     "engine_bay_min_width_m":  round(min_engine_w, 3),
     "engine_bay_height_ok":    engine_h_ok,
     "engine_bay_width_ok":     engine_w_ok,
+    # Spec constants forwarded for simulation scripts
+    "spec_MTOW_kg":            MTOW_KG,
+    "spec_CL_max":             CL_MAX,
+    "spec_vstall_lim_ms":      VSTALL_LIM,
+    "spec_engine_mass_kg":     ENGINE_MASS_KG,
+    "spec_P_engine_kw":        float(spec.get("P_engine_kw", 0.0)),
 }
 
 json_path = out_path.with_suffix(".json")
